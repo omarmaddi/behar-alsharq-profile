@@ -1,0 +1,4 @@
+node_modules/
+out/still_*
+audio/music.wav
+audio/sfx.wav

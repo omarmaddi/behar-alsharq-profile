@@ -1,0 +1,77 @@
+/* ======================================================================
+   Bahar Al-Sharq · Company Profile 2026
+   Square format 1080 × 1080. Three brand colours only, used as full fields:
+   sea blue, sun yellow, white. Graphic language taken from the logo:
+   the sun circle (frames photos), seven rays, two waves.
+   ====================================================================== */
+@font-face{font-family:Kufi;src:url(assets/fonts/NotoKufiArabic-400.ttf);font-weight:400}
+@font-face{font-family:Kufi;src:url(assets/fonts/NotoKufiArabic-500.ttf);font-weight:500}
+@font-face{font-family:Kufi;src:url(assets/fonts/NotoKufiArabic-600.ttf);font-weight:600}
+@font-face{font-family:Kufi;src:url(assets/fonts/NotoKufiArabic-700.ttf);font-weight:700}
+@font-face{font-family:Kufi;src:url(assets/fonts/NotoKufiArabic-800.ttf);font-weight:800}
+@font-face{font-family:Kufi;src:url(assets/fonts/NotoKufiArabic-900.ttf);font-weight:900}
+@font-face{font-family:Almarai;src:url(assets/fonts/Almarai-300.ttf);font-weight:300}
+@font-face{font-family:Almarai;src:url(assets/fonts/Almarai-400.ttf);font-weight:400}
+@font-face{font-family:Almarai;src:url(assets/fonts/Almarai-700.ttf);font-weight:700}
+@font-face{font-family:Almarai;src:url(assets/fonts/Almarai-800.ttf);font-weight:800}
+
+:root{
+  --sea:#1f5f94;      /* brand blue — main field */
+  --deep:#0c3a63;     /* text on light fields */
+  --sun:#f6b400;      /* brand yellow — second field */
+  --white:#ffffff;
+  --foam:#e9f1f8;     /* pale blue */
+  --soft:rgba(255,255,255,.78);
+}
+@page{size:1080px 1080px;margin:0}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:#5b6570}
+body{font-family:Almarai,sans-serif;font-size:21px;line-height:1.75;color:var(--deep);-webkit-print-color-adjust:exact;print-color-adjust:exact}
+img{display:block}
+
+.page{width:1080px;height:1080px;position:relative;overflow:hidden;break-after:page;page-break-after:always}
+.page:last-child{break-after:auto;page-break-after:auto}
+.blue{background:var(--sea);color:#fff}
+.yellow{background:var(--sun);color:var(--deep)}
+.white{background:#fff;color:var(--deep)}
+
+.abs{position:absolute}
+.k{font-family:Kufi,sans-serif}
+.ltr{direction:ltr;unicode-bidi:isolate;display:inline-block}
+
+/* type scale */
+.tag{font-family:Kufi;font-weight:600;font-size:17px;letter-spacing:.01em;display:flex;align-items:center;gap:14px}
+.tag::before{content:"";width:34px;height:4px;border-radius:2px;background:currentColor}
+.blue .tag{color:var(--sun)}
+.white .tag{color:var(--sea)}
+.yellow .tag{color:var(--deep)}
+.h1{font-family:Kufi;font-weight:900;font-size:112px;line-height:1.35}
+.h2{font-family:Kufi;font-weight:800;font-size:58px;line-height:1.45}
+.h3{font-family:Kufi;font-weight:700;font-size:27px;line-height:1.55}
+.h4{font-family:Kufi;font-weight:700;font-size:22px;line-height:1.55}
+.lead{font-size:24px;line-height:1.85}
+.blue .lead,.blue p{color:var(--soft)}
+.cap{font-size:15px;line-height:1.5}
+.blue .hl{color:var(--sun)}
+.white .hl{color:var(--sea)}
+.yellow .hl{color:#fff}
+
+/* photo frames */
+.ph{position:absolute;overflow:hidden}
+.ph img{width:100%;height:100%;object-fit:cover}
+.circle{border-radius:50%}
+
+/* page chrome */
+.chrome{position:absolute;left:72px;right:72px;bottom:44px;display:flex;justify-content:space-between;align-items:center;font-family:Kufi;font-size:14px;font-weight:600;z-index:20}
+.chrome .n{font-size:15px;letter-spacing:.08em}
+.blue .chrome,.photo .chrome{color:rgba(255,255,255,.8)}
+.white .chrome{color:var(--sea)}
+.yellow .chrome{color:var(--deep)}
+.chrome img{height:30px}
+
+/* bullets: the play triangle from the logo */
+.plays{list-style:none;display:grid;gap:12px}
+.plays li{position:relative;padding-right:30px}
+.plays li::before{content:"";position:absolute;right:0;top:.62em;border-style:solid;border-width:7px 11px 7px 0;border-color:transparent var(--sun) transparent transparent}
+.white .plays li::before{border-color:transparent var(--sea) transparent transparent}
+.yellow .plays li::before{border-color:transparent var(--deep) transparent transparent}

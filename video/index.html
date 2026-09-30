@@ -1,0 +1,384 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<title>Bahar Al-Sharq — Ad 9:16</title>
+<style>
+@font-face{font-family:Kufi;src:url(../profile/assets/fonts/NotoKufiArabic-700.ttf);font-weight:700}
+@font-face{font-family:Kufi;src:url(../profile/assets/fonts/NotoKufiArabic-800.ttf);font-weight:800}
+@font-face{font-family:Kufi;src:url(../profile/assets/fonts/NotoKufiArabic-900.ttf);font-weight:900}
+@font-face{font-family:Almarai;src:url(../profile/assets/fonts/Almarai-700.ttf);font-weight:700}
+@font-face{font-family:Almarai;src:url(../profile/assets/fonts/Almarai-800.ttf);font-weight:800}
+:root{--sea:#1f5f94;--deep:#0c3a63;--sun:#f6b400;--foam:#e9f1f8}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1080px;height:1920px;overflow:hidden;background:#000}
+body{font-family:Kufi,sans-serif;color:#fff}
+#stage{position:relative;width:1080px;height:1920px;overflow:hidden;background:var(--sea)}
+.scene{position:absolute;inset:0;visibility:hidden;overflow:hidden}
+.abs{position:absolute}
+.full{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.circle{border-radius:50%;overflow:hidden}
+.line{display:block;overflow:hidden;padding:0 6px;line-height:1.5}
+.w{display:inline-block;white-space:pre}
+.sun{color:var(--sun)}
+.deep{color:var(--deep)}
+.tag{display:inline-flex;align-items:center;gap:16px;background:var(--sun);color:var(--deep);font-weight:800;font-size:34px;padding:10px 30px;border-radius:60px}
+.tag b{font-weight:900}
+.ltr{direction:ltr;unicode-bidi:isolate;display:inline-block}
+.shadow{text-shadow:0 4px 24px rgba(0,0,0,.35)}
+#wipe{position:absolute;left:0;top:0;width:1080px;height:3900px;z-index:50;transform:translateY(1920px);pointer-events:none}
+#wipe svg{position:absolute;left:0;width:1080px;height:260px}
+#wipe .body{position:absolute;left:0;right:0;top:250px;bottom:250px}
+#logo-mark{position:absolute;right:60px;top:120px;height:84px;z-index:40;opacity:0}
+.chip{position:absolute;background:#fff;color:var(--deep);font-weight:800;font-size:40px;padding:16px 34px;border-radius:70px;box-shadow:0 18px 40px rgba(12,58,99,.28);white-space:nowrap}
+.chip.y{background:var(--sun)}
+.chip.b{background:var(--sea);color:#fff}
+
+/* ================= SQUARE 1:1 LAYOUT (?fmt=sq) ================= */
+html.sq,html.sq body{height:1080px}
+.sq #stage{height:1080px}
+.sq #logo-mark{right:auto!important;left:60px!important;top:56px!important;height:62px!important}
+.sq .tag{font-size:28px;padding:8px 24px}
+.sq .chip{font-size:30px;padding:12px 26px}
+.sq [id$="-tag"]{top:56px!important}
+/* A */
+.sq #A-sun{left:290px!important;top:110px!important;width:500px!important;height:500px!important;box-shadow:0 0 0 16px var(--sun)!important}
+.sq #A-l1{font-size:62px!important}.sq #A-l2{font-size:84px!important}
+.sq #A-txt{top:680px!important}
+/* B */
+.sq #B-sun{left:405px!important;top:170px!important;width:270px!important;height:270px!important}
+.sq #B-logo{left:385px!important;top:110px!important;width:310px!important}
+.sq #B-txt{top:590px!important}.sq #B-l1{font-size:84px!important}.sq #B-l2{font-size:74px!important}
+.sq #B-waves{height:250px!important}
+/* C */
+.sq #C-badge{top:150px!important}
+.sq #C-txt{top:640px!important}.sq #C-l1{font-size:68px!important}.sq #C-l2,.sq #C-l3{font-size:52px!important}
+/* D */
+.sq #D-txt{top:560px!important}.sq #D-num{font-size:116px!important}.sq #D-l0{font-size:42px!important}.sq #D-l1{font-size:62px!important}
+/* E */
+.sq #E-c1{right:70px!important;top:150px!important;width:370px!important;height:370px!important}
+.sq #E-c2{left:70px!important;top:190px!important;width:350px!important;height:350px!important}
+.sq #E-c3{right:auto!important;left:375px!important;top:460px!important;width:320px!important;height:320px!important}
+.sq #E-t1{right:150px!important;top:490px!important}.sq #E-t2{left:120px!important;top:520px!important}.sq #E-t3{right:auto!important;left:440px!important;top:750px!important}
+.sq #E-txt{top:860px!important}.sq #E-l1{font-size:80px!important}
+/* F */
+.sq #F-bp{top:150px!important;width:400px!important;height:400px!important}
+.sq #F-verbs{top:150px!important}.sq .F-v{font-size:58px!important}
+.sq #F-photo{top:590px!important;height:490px!important}
+.sq #F-txt{top:760px!important}.sq #F-l1{font-size:50px!important}.sq #F-l2{font-size:62px!important}
+/* G */
+.sq #G-txt{top:130px!important}.sq #G-l1{font-size:58px!important}.sq #G-l2{font-size:68px!important}
+.sq #G-phone{left:380px!important;top:390px!important;width:320px!important;height:640px!important;border-radius:48px!important;padding:14px!important}
+.sq #G-c1{right:40px!important;top:430px!important}.sq #G-c2{left:30px!important;top:500px!important}.sq #G-c3{right:70px!important;top:620px!important}
+.sq #G-c4{left:60px!important;top:680px!important}.sq #G-c5{right:30px!important;top:800px!important}.sq #G-c6{left:120px!important;top:860px!important}
+/* H */
+.sq #H-logo{left:385px!important;top:100px!important;width:310px!important}
+.sq #H-txt{top:520px!important}.sq #H-l1,.sq #H-l2{font-size:62px!important}
+.sq #H-cta{left:270px!important;right:270px!important;top:740px!important;font-size:44px!important;padding:12px 0!important}
+.sq #H-info{top:850px!important}.sq #H-info div:first-child{font-size:44px!important}.sq #H-info div:nth-child(2){font-size:26px!important}.sq #H-info div:nth-child(3){font-size:22px!important}
+.sq #H-waves{height:160px!important}
+</style>
+</head>
+<body>
+<div id="stage">
+
+  <!-- ====================== A · HOOK ====================== -->
+  <section class="scene" id="A">
+    <div class="abs circle" id="A-sun" style="left:190px;top:330px;width:700px;height:700px;box-shadow:0 0 0 22px var(--sun)">
+      <img class="full" id="A-img" src="../profile/assets/img/0342.jpg" style="object-position:50% 55%">
+    </div>
+    <svg class="abs" id="A-rays" style="left:0;top:0;width:1080px;height:1100px" viewBox="0 0 1080 1100"></svg>
+    <div class="abs" id="A-txt" style="left:60px;right:60px;top:1150px;text-align:center">
+      <div class="line" style="font-size:78px;font-weight:900" id="A-l1"></div>
+      <div class="line sun" style="font-size:104px;font-weight:900;margin-top:6px" id="A-l2"></div>
+    </div>
+  </section>
+
+  <!-- ====================== B · BRAND ====================== -->
+  <section class="scene" id="B">
+    <svg class="abs" id="B-rays" style="left:0;top:0;width:1080px;height:1100px" viewBox="0 0 1080 1100"></svg>
+    <div class="abs circle" id="B-sun" style="left:340px;top:420px;width:400px;height:400px;background:var(--sun)"></div>
+    <img class="abs" id="B-logo" src="../profile/assets/logo/logo-v-white.svg" style="left:290px;top:360px;width:500px">
+    <div class="abs" id="B-txt" style="left:60px;right:60px;top:1080px;text-align:center">
+      <div class="line" style="font-size:108px;font-weight:900" id="B-l1"></div>
+      <div class="line sun" style="font-size:96px;font-weight:900" id="B-l2"></div>
+    </div>
+    <svg class="abs" id="B-waves" style="left:0;bottom:0;width:1080px;height:420px" viewBox="0 0 1080 420" preserveAspectRatio="none">
+      <path id="B-w1" d="M0 170 C170 90 360 80 545 150 S905 250 1080 140 V420 H0Z" fill="#5d93c2"/>
+      <path id="B-w2" d="M0 250 C210 180 390 190 575 240 S915 300 1080 220 V420 H0Z" fill="#fff"/>
+    </svg>
+  </section>
+
+  <!-- ====================== C · MOBILE ====================== -->
+  <section class="scene" id="C">
+    <img class="full C-img" id="C-i1" src="../profile/assets/img/0180.jpg" style="object-position:30% 60%">
+    <img class="full C-img" id="C-i2" src="../profile/assets/img/0069.jpg" style="object-position:58% 50%">
+    <img class="full C-img" id="C-i3" src="../profile/assets/img/0363.jpg" style="object-position:50% 60%">
+    <div class="abs" style="inset:0;background:linear-gradient(to top,rgba(12,58,99,.96) 0%,rgba(12,58,99,.75) 30%,rgba(12,58,99,0) 55%),linear-gradient(to bottom,rgba(12,58,99,.55),rgba(12,58,99,0) 20%)"></div>
+    <div class="abs" style="right:60px;top:300px" id="C-tag"><span class="tag"><b>01</b> الشاشات المتنقلة</span></div>
+    <div class="abs" id="C-txt" style="left:60px;right:60px;top:1180px">
+      <div class="line shadow" style="font-size:84px;font-weight:900" id="C-l1"></div>
+      <div class="line shadow" style="font-size:62px;font-weight:900" id="C-l2"></div>
+      <div class="line shadow sun" style="font-size:62px;font-weight:900" id="C-l3"></div>
+    </div>
+    <div class="abs" id="C-badge" style="left:60px;top:300px;background:rgba(255,255,255,.14);border:2px solid rgba(255,255,255,.4);border-radius:26px;padding:16px 24px;text-align:center">
+      <div style="font-size:54px;font-weight:900;line-height:1.1" class="sun">3</div><div style="font-size:24px;font-weight:700">واجهات LED</div></div>
+  </section>
+
+  <!-- ====================== D · FIXED ====================== -->
+  <section class="scene" id="D">
+    <img class="full" id="D-img" src="../profile/assets/img/0044.jpg" style="object-position:50% 30%">
+    <div class="abs" style="inset:0;background:linear-gradient(to top,rgba(12,58,99,.97) 0%,rgba(12,58,99,.8) 34%,rgba(12,58,99,0) 58%)"></div>
+    <div class="abs" style="right:60px;top:300px" id="D-tag"><span class="tag"><b>02</b> الشاشات الثابتة</span></div>
+    <div class="abs" id="D-txt" style="left:60px;right:60px;top:1060px;text-align:right">
+      <div id="D-num" class="ltr sun" style="font-size:150px;font-weight:900;line-height:1.1;display:block;text-align:right"><span id="D-w">0</span> × <span id="D-h">0</span><span style="font-size:70px"> m</span></div>
+      <div class="line" style="font-size:54px;font-weight:800" id="D-l0"></div>
+      <div class="line" style="font-size:80px;font-weight:900;margin-top:14px" id="D-l1"></div>
+    </div>
+  </section>
+
+  <!-- ====================== E · EVENTS ====================== -->
+  <section class="scene" id="E" style="background:var(--sun)">
+    <div class="abs" style="right:60px;top:300px" id="E-tag"><span class="tag" style="background:var(--deep);color:#fff"><b style="color:var(--sun)">03</b> شاشات الفعاليات</span></div>
+    <div class="abs circle E-c" id="E-c1" style="right:60px;top:430px;width:480px;height:480px;box-shadow:0 0 0 16px #fff"><img class="full" src="../profile/assets/img/0372.jpg"></div>
+    <div class="abs circle E-c" id="E-c2" style="left:60px;top:720px;width:420px;height:420px;box-shadow:0 0 0 16px #fff"><img class="full" src="../profile/assets/img/0215.jpg" style="object-position:50% 40%"></div>
+    <div class="abs circle E-c" id="E-c3" style="right:190px;top:1040px;width:400px;height:400px;box-shadow:0 0 0 16px #fff"><img class="full" src="../profile/assets/img/0078.jpg" style="object-position:50% 60%"></div>
+    <div class="chip b" id="E-t1" style="right:170px;top:870px">الفعاليات</div>
+    <div class="chip b" id="E-t2" style="left:120px;top:1100px">المؤتمرات</div>
+    <div class="chip b" id="E-t3" style="right:260px;top:1400px">المهرجانات</div>
+    <div class="abs" id="E-txt" style="left:60px;right:60px;top:1500px;text-align:center">
+      <div class="line deep" style="font-size:104px;font-weight:900" id="E-l1"></div>
+    </div>
+  </section>
+
+  <!-- ====================== F · IMPORT / INSTALL ====================== -->
+  <section class="scene" id="F" style="background-color:var(--sea);background-image:linear-gradient(rgba(255,255,255,.07) 2px,transparent 2px),linear-gradient(90deg,rgba(255,255,255,.07) 2px,transparent 2px);background-size:60px 60px">
+    <div class="abs" style="right:60px;top:300px" id="F-tag"><span class="tag"><b>04</b> استيراد · توريد · تركيب</span></div>
+    <svg class="abs" id="F-bp" style="left:60px;top:420px;width:560px;height:560px" viewBox="0 0 560 560">
+      <g fill="none" stroke="#fff" stroke-width="4" id="F-grid"></g>
+      <g stroke="var(--sun)" stroke-width="3" fill="var(--sun)" font-family="Kufi" font-weight="800" font-size="30" id="F-dims" style="direction:ltr">
+        <line x1="60" y1="40" x2="500" y2="40" stroke-dasharray="10 8"/><text x="280" y="28" text-anchor="middle" stroke="none">960 mm</text>
+        <line x1="30" y1="70" x2="30" y2="510" stroke-dasharray="10 8"/><text x="18" y="290" text-anchor="middle" stroke="none" transform="rotate(-90 18 290)">960 mm</text>
+      </g>
+    </svg>
+    <div class="abs" id="F-verbs" style="right:60px;top:470px;width:400px">
+      <div class="F-v" style="font-size:74px;font-weight:900;line-height:1.55">✓ نستورد</div>
+      <div class="F-v" style="font-size:74px;font-weight:900;line-height:1.55">✓ نورّد</div>
+      <div class="F-v sun" style="font-size:74px;font-weight:900;line-height:1.55">✓ نركّب</div>
+      <div id="F-agent" style="margin-top:22px;font-size:26px;font-weight:700;background:rgba(255,255,255,.12);border-radius:18px;padding:12px 18px;display:inline-block">وكلاء مصنع <span class="ltr">EnBon</span> لشاشات LED</div>
+    </div>
+    <div class="abs" id="F-photo" style="left:0;right:0;top:1060px;height:860px;overflow:hidden">
+      <img class="full" src="../profile/assets/img/0187.jpg" style="object-position:50% 35%">
+      <div class="abs" style="inset:0;background:linear-gradient(to top,rgba(12,58,99,.95) 0%,rgba(12,58,99,.5) 45%,rgba(12,58,99,0) 70%)"></div>
+    </div>
+    <div class="abs" id="F-txt" style="left:60px;right:60px;top:1290px">
+      <div class="line shadow" style="font-size:66px;font-weight:900" id="F-l1"></div>
+      <div class="line shadow sun" style="font-size:80px;font-weight:900" id="F-l2"></div>
+      <div id="F-prog" style="position:relative;height:10px;margin-top:26px;background:rgba(255,255,255,.25);border-radius:6px">
+        <div id="F-bar" style="position:absolute;right:0;top:0;bottom:0;width:0;background:var(--sun);border-radius:6px"></div></div>
+    </div>
+  </section>
+
+  <!-- ====================== G · DIGITAL ====================== -->
+  <section class="scene" id="G" style="background:#fff">
+    <div class="abs" style="right:60px;top:300px" id="G-tag"><span class="tag" style="background:var(--sea);color:#fff"><b style="color:var(--sun)">05</b> التسويق الرقمي والإنتاج</span></div>
+    <div class="abs" id="G-txt" style="left:60px;right:60px;top:400px;text-align:right">
+      <div class="line deep" style="font-size:82px;font-weight:900" id="G-l1"></div>
+      <div class="line" style="font-size:96px;font-weight:900;color:var(--sea)" id="G-l2"></div>
+    </div>
+    <div class="abs" id="G-phone" style="left:330px;top:760px;width:420px;height:840px;border-radius:64px;background:#0b1624;padding:18px;box-shadow:0 40px 80px rgba(12,58,99,.35)">
+      <div style="position:relative;width:100%;height:100%;border-radius:48px;overflow:hidden;background:#fff">
+        <div id="G-feed" style="position:absolute;left:0;right:0;top:0">
+          <div style="height:70px;display:flex;align-items:center;gap:12px;padding:0 20px;direction:rtl"><img src="../profile/assets/logo/logo-icon.svg" style="height:42px"><b style="font-size:22px;color:var(--deep)">bahrshrq@</b></div>
+          <img src="../profile/assets/img/0237.jpg" style="width:100%;height:384px;object-fit:cover;display:block">
+          <div style="height:64px;display:flex;align-items:center;gap:18px;padding:0 20px;font-size:26px;color:var(--deep);direction:rtl"><span style="color:#e0245e">♥</span><b id="G-likes" class="ltr">1,284</b></div>
+          <img src="../profile/assets/img/0122.jpg" style="width:100%;height:384px;object-fit:cover;display:block">
+          <div style="height:64px"></div>
+          <img src="../profile/assets/img/0229.jpg" style="width:100%;height:384px;object-fit:cover;display:block">
+          <div style="height:64px"></div>
+          <img src="../profile/assets/img/0369.jpg" style="width:100%;height:384px;object-fit:cover;display:block">
+        </div>
+      </div>
+    </div>
+    <div class="chip y" id="G-c1" style="right:40px;top:820px">تسويق رقمي</div>
+    <div class="chip b" id="G-c2" style="left:30px;top:960px">إدارة صفحات</div>
+    <div class="chip" id="G-c3" style="right:60px;top:1130px;border:3px solid var(--sea)">تصميم</div>
+    <div class="chip y" id="G-c4" style="left:50px;top:1290px">مونتاج</div>
+    <div class="chip b" id="G-c5" style="right:30px;top:1440px">موشن جرافيك</div>
+    <div class="chip" id="G-c6" style="left:90px;top:1500px;border:3px solid var(--sea)"><span class="ltr">3D</span></div>
+  </section>
+
+  <!-- ====================== H · CTA ====================== -->
+  <section class="scene" id="H">
+    <svg class="abs" id="H-rays" style="left:0;top:0;width:1080px;height:1100px" viewBox="0 0 1080 1100"></svg>
+    <img class="abs" id="H-logo" src="../profile/assets/logo/logo-v-white.svg" style="left:340px;top:250px;width:400px">
+    <div class="abs" id="H-txt" style="left:60px;right:60px;top:810px;text-align:center">
+      <div class="line" style="font-size:84px;font-weight:900" id="H-l1"></div>
+      <div class="line sun" style="font-size:84px;font-weight:900" id="H-l2"></div>
+    </div>
+    <div class="abs" id="H-cta" style="left:190px;right:190px;top:1110px;background:var(--sun);color:var(--deep);border-radius:80px;text-align:center;font-size:62px;font-weight:900;padding:18px 0">تواصل معنا الآن</div>
+    <div class="abs" id="H-info" style="left:60px;right:60px;top:1280px;text-align:center">
+      <div style="font-size:60px;font-weight:900" class="ltr">784 007 800 &nbsp;|&nbsp; 784 006 800</div>
+      <div style="font-size:34px;font-weight:700;opacity:.9;margin-top:6px"><span class="ltr">@bahrshrq</span> &nbsp;·&nbsp; <span class="ltr">www.bahrshrq.com</span></div>
+      <div style="font-size:30px;font-weight:700;opacity:.8;margin-top:4px">عدن – المنصورة</div>
+    </div>
+    <svg class="abs" id="H-waves" style="left:0;bottom:0;width:1080px;height:330px" viewBox="0 0 1080 330" preserveAspectRatio="none">
+      <path d="M0 130 C170 60 360 50 545 115 S905 200 1080 105 V330 H0Z" fill="#5d93c2"/>
+      <path d="M0 200 C210 140 390 150 575 195 S915 250 1080 180 V330 H0Z" fill="var(--sun)"/>
+    </svg>
+  </section>
+
+  <img id="logo-mark" src="../profile/assets/logo/logo-h-white.svg">
+
+  <!-- brand wave wipe used between scenes -->
+  <div id="wipe">
+    <svg style="top:0" viewBox="0 0 1080 260" preserveAspectRatio="none"><path id="wipe-top" d="M0 150 C200 40 400 40 560 120 S900 230 1080 110 V260 H0Z"/></svg>
+    <div class="body" id="wipe-body"></div>
+    <svg style="bottom:0" viewBox="0 0 1080 260" preserveAspectRatio="none"><path id="wipe-bot" d="M0 0 H1080 V150 C900 40 700 40 540 120 S200 230 0 110Z"/></svg>
+  </div>
+</div>
+
+<script src="node_modules/gsap/dist/gsap.min.js"></script>
+<script src="audio/words.js"></script>
+<script>const SQ=location.search.includes('fmt=sq'); if(SQ) document.documentElement.classList.add('sq'); const H=SQ?1080:1920;</script>
+<script>
+// ---------------------------------------------------------------- timing
+// All times are seconds in the final video. The voice-over is placed at +0.40 s,
+// so every cue = word start in the VO file + 0.40 (measured with word timestamps).
+const OFF = 0.40;
+const W = i => +(WORDS[i][0] + OFF).toFixed(3);   // start of word i in video time
+const DURATION = +(WORDS[WORDS.length-1][1] + OFF + 2.7).toFixed(2);
+
+const tl = gsap.timeline({paused:true});
+const $ = id => document.getElementById(id);
+
+// helpers ------------------------------------------------------------
+function rays(svgId, cx, cy, r1, r2, width, spread, color){
+  const svg=$(svgId); let h='';
+  for(let i=0;i<7;i++){
+    const a=(-90-spread/2+i*spread/6)*Math.PI/180;
+    h+=`<line x1="${cx+r1*Math.cos(a)}" y1="${cy+r1*Math.sin(a)}" x2="${cx+r2*Math.cos(a)}" y2="${cy+r2*Math.sin(a)}" stroke="${color}" stroke-width="${width}" stroke-linecap="round" pathLength="1" stroke-dasharray="1 1" stroke-dashoffset="1"/>`;
+  }
+  svg.innerHTML=h; return svg.querySelectorAll('line');
+}
+// words with individual cue times: [[text, t, cls]]
+function words(lineId, list){
+  const el=$(lineId);
+  el.innerHTML=list.map(([w,,c])=>`<span class="w ${c||''}">${w} </span>`).join('');
+  el.querySelectorAll('.w').forEach((s,i)=>{
+    tl.fromTo(s,{yPercent:115,opacity:0},{yPercent:0,opacity:1,duration:.42,ease:'power3.out'},list[i][1]);
+  });
+}
+function scene(id,t0,t1){ tl.set($(id),{visibility:'visible'},t0); tl.set($(id),{visibility:'hidden'},t1); }
+function wipe(t,color){                       // covers the frame at t, reveals next scene
+  tl.set(['#wipe-top','#wipe-bot'],{attr:{fill:color}},t-0.45);
+  tl.set('#wipe-body',{background:color},t-0.45);
+  tl.fromTo('#wipe',{y:H},{y:-3900,duration:0.9,ease:'power2.inOut'},t-0.45);
+}
+function kb(el,t,d,from=1.18,to=1.0){ tl.fromTo(el,{scale:from},{scale:to,duration:d,ease:'none'},t); }
+function pop(el,t,dur=.55){ tl.fromTo(el,{scale:0,opacity:0},{scale:1,opacity:1,duration:dur,ease:'back.out(1.7)'},t); }
+
+// scene windows (video time) ------------------------------------------
+const SB=[0, W(7)+0.25, W(16)+0.28, W(29)+0.12, W(36)+0.05, W(42)+0.09, W(52)+0.03, W(64)-0.04, DURATION];
+const S = {}; 'ABCDEFGH'.split('').forEach((k,i)=>S[k]=[SB[i],SB[i+1]]);
+Object.entries(S).forEach(([k,[a,b]])=>scene(k,a,b));
+['B','C','D','E','F','G','H'].forEach((k,i)=>wipe(S[k][0], ['#f6b400','#ffffff','#f6b400','#1f5f94','#ffffff','#f6b400','#1f5f94'][i]));
+
+// persistent small logo during service scenes
+tl.fromTo('#logo-mark',{opacity:0},{opacity:1,duration:.4},S.C[0]); tl.set('#logo-mark',{opacity:0},S.G[0]);
+
+// ============ A · HOOK  (VO 0.00–3.64)
+tl.fromTo('#A-sun',{scale:0},{scale:1,duration:.9,ease:'back.out(1.4)'},0.05);
+kb('#A-img',0,S.B[0],1.35,1.05);
+(SQ?rays('A-rays',540,360,300,370,16,130,'#f6b400'):rays('A-rays',540,680,410,520,22,130,'#f6b400')).forEach((l,i)=>tl.to(l,{attr:{'stroke-dashoffset':0},duration:.45,ease:'power2.out'},0.35+i*0.06));
+words('A-l1',[['إعلانك',W(0)],['لا',W(1)],['ينتظر',W(2)],['المارّة…',W(3)]]);
+words('A-l2',[['بل',W(4)],['يذهب',W(5)],['إليهم.',W(6)]]);
+tl.to('#A-sun',{scale:1.08,duration:1.2,ease:'sine.inOut'},2.6);
+
+// ============ B · BRAND  (VO 3.64–9.52)
+const bRays=(SQ?rays('B-rays',540,305,190,255,14,150,'#f6b400'):rays('B-rays',540,620,270,360,18,150,'#f6b400'));
+tl.fromTo('#B-sun',{scale:0},{scale:1,duration:.7,ease:'back.out(1.6)'},S.B[0]+0.05);
+tl.fromTo('#B-logo',{scale:.7,opacity:0},{scale:1,opacity:1,duration:.8,ease:'power3.out'},S.B[0]+0.2);
+tl.set('#B-sun',{opacity:0},S.B[0]+0.9);
+bRays.forEach((l,i)=>tl.to(l,{attr:{'stroke-dashoffset':0},duration:.4},S.B[0]+0.4+i*0.05));
+tl.fromTo('#B-rays',{rotation:-6,transformOrigin:SQ?'540px 305px':'540px 620px'},{rotation:6,duration:5.8,ease:'sine.inOut'},S.B[0]);
+tl.fromTo('#B-waves',{y:200},{y:0,duration:1,ease:'power3.out'},S.B[0]+0.1);
+tl.to('#B-w1',{attr:{d:'M0 140 C200 70 380 100 560 160 S900 230 1080 120 V420 H0Z'},duration:5,ease:'sine.inOut'},S.B[0]+1);
+words('B-l1',[['نجعلك',W(11)],['مرئيّاً',W(12),'sun']]);
+words('B-l2',[['في',W(13)],['كل',W(14)],['مكان',W(15)]]);
+
+// ============ C · MOBILE  (VO 9.52–19.08)
+const ci=['#C-i1','#C-i2','#C-i3'], cT=[S.C[0], W(19)-0.1, W(24)-0.1, S.C[1]];
+ci.forEach((id,i)=>{
+  tl.set(id,{opacity:0},0); tl.set(id,{opacity:1},cT[i]);
+  if(i>0) tl.fromTo(id,{clipPath:'inset(0 0 0 100%)'},{clipPath:'inset(0 0 0 0%)',duration:.55,ease:'power3.inOut'},cT[i]);
+  kb(id,cT[i],cT[i+1]-cT[i]+0.6,1.2,1.02);
+});
+pop('#C-tag',S.C[0]+0.3); pop('#C-badge',S.C[0]+0.8);
+words('C-l1',[['شاشات',W(16)],['إعلانية',W(17)],['متنقلة',W(18),'sun']]);
+words('C-l2',[['تجوب',W(19)],['شوارع',W(20)],['عدن',W(21)],['ليلاً',W(22)],['ونهاراً',W(23)]]);
+words('C-l3',[['وتصل',W(24)],['إلى',W(25)],['جمهورك',W(26)],['أينما',W(27)],['كان',W(28)]]);
+
+// ============ D · FIXED  (VO 19.08–24.70)
+tl.fromTo('#D-img',{objectPosition:'50% 85%',scale:1.12},{objectPosition:'50% 25%',scale:1,duration:5.8,ease:'sine.inOut'},S.D[0]);
+pop('#D-tag',S.D[0]+0.3);
+const dim={w:0,h:0};
+tl.fromTo('#D-num',{opacity:0,y:40},{opacity:1,y:0,duration:.4},W(29));
+tl.to(dim,{w:10,h:6,duration:1.3,ease:'power2.out',onUpdate:()=>{$('D-w').textContent=Math.round(dim.w);$('D-h').textContent=Math.round(dim.h);}},W(29));
+words('D-l0',[['شاشات',W(29)],['ثابتة',W(30)],['عملاقة',W(31)]]);
+words('D-l1',[['فوق',W(32)],['أكثر',W(33)],['المواقع',W(34)],['ازدحاماً',W(35),'sun']]);
+
+// ============ E · EVENTS  (VO 24.70–30.96)
+pop('#E-tag',S.E[0]+0.2);
+[['#E-c1','#E-t1',W(37)],['#E-c2','#E-t2',W(38)],['#E-c3','#E-t3',W(39)]].forEach(([c,t,time])=>{
+  pop(c,time-0.25,.6); kb(c+' img',time-0.25,6,1.3,1); pop(t,time+0.1,.45);
+});
+words('E-l1',[['بكل',W(40)],['الأحجام',W(41)]]);
+tl.to('.E-c',{y:-18,duration:1.2,yoyo:true,repeat:3,ease:'sine.inOut',stagger:.2},(W(37)+0.26));
+
+// ============ F · IMPORT / INSTALL  (VO 30.96–38.52)
+(function(){                                    // P5 cabinet: 3 × 6 modules, drawn as lines
+  const g=$('F-grid'); let h='<rect x="60" y="70" width="440" height="440" pathLength="1" stroke-dasharray="1 1" stroke-dashoffset="1"/>';
+  for(let i=1;i<3;i++) h+=`<line x1="${60+i*440/3}" y1="70" x2="${60+i*440/3}" y2="510" pathLength="1" stroke-dasharray="1 1" stroke-dashoffset="1"/>`;
+  for(let j=1;j<6;j++) h+=`<line x1="60" y1="${70+j*440/6}" x2="500" y2="${70+j*440/6}" pathLength="1" stroke-dasharray="1 1" stroke-dashoffset="1"/>`;
+  g.innerHTML=h;
+  g.querySelectorAll('*').forEach((e,i)=>tl.to(e,{attr:{'stroke-dashoffset':0},duration:.5,ease:'power2.inOut'},S.F[0]+0.2+i*0.07));
+})();
+tl.fromTo('#F-dims',{opacity:0},{opacity:1,duration:.4},S.F[0]+1.1);
+pop('#F-tag',S.F[0]+0.2);
+document.querySelectorAll('.F-v').forEach((e,i)=>tl.fromTo(e,{x:120,opacity:0},{x:0,opacity:1,duration:.45,ease:'power3.out'},[W(42),W(45),W(46)][i]));
+tl.fromTo('#F-agent',{opacity:0},{opacity:1,duration:.4},(W(46)+0.5));
+tl.fromTo('#F-photo',{yPercent:100},{yPercent:0,duration:.7,ease:'power3.out'},(W(46)+0.9));
+kb('#F-photo img',(W(46)+0.9),4,1.2,1.02);
+words('F-l1',[['من',W(47)],['المعاينة…',W(48)]]);
+words('F-l2',[['حتى',W(49)],['أوّل',W(50)],['بث',W(51)]]);
+tl.fromTo('#F-bar',{width:'0%'},{width:'100%',duration:2.6,ease:'power1.inOut'},W(47));
+
+// ============ G · DIGITAL  (VO 38.52–47.24)
+pop('#G-tag',S.G[0]+0.2);
+words('G-l1',[['ومن',W(52)],['الشارع…',W(53)]]);
+words('G-l2',[['إلى',W(54)],['هاتفك',W(55)]]);
+tl.fromTo('#G-phone',{y:900,rotation:-8},{y:0,rotation:0,duration:.9,ease:'power3.out'},(W(53)+0.46));
+tl.to('#G-feed',{y:-1040,duration:6.5,ease:'power1.inOut'},(W(55)+0.66));
+const likes={v:1284}; tl.to(likes,{v:9871,duration:6,ease:'power1.in',onUpdate:()=>{$('G-likes').textContent=Math.round(likes.v).toLocaleString('en-US');}},(W(55)+0.76));
+[['#G-c1',56],['#G-c2',58],['#G-c3',60],['#G-c4',61],['#G-c5',62],['#G-c6',63]].forEach(([id,i])=>pop(id,W(i)));
+tl.to('#G-phone',{scale:1.04,duration:.4,yoyo:true,repeat:1},(W(63)+0.04));
+
+// ============ H · CTA  (VO 47.24–52.94)
+const hRays=(SQ?rays('H-rays',540,260,210,270,14,150,'#f6b400'):rays('H-rays',540,450,270,350,18,150,'#f6b400'));
+tl.fromTo('#H-logo',{scale:.6,opacity:0},{scale:1,opacity:1,duration:.8,ease:'back.out(1.4)'},S.H[0]+0.05);
+hRays.forEach((l,i)=>tl.to(l,{attr:{'stroke-dashoffset':0},duration:.4},S.H[0]+0.35+i*0.05));
+tl.fromTo('#H-waves',{y:260},{y:0,duration:1,ease:'power3.out'},S.H[0]+0.2);
+words('H-l1',[['دع',W(66)],['أفكارك',W(67)]]);
+words('H-l2',[['تُبحر',W(68)],['بعيداً',W(69)]]);
+pop('#H-cta',(W(69)+0.88),.6);
+tl.fromTo('#H-info',{opacity:0,y:40},{opacity:1,y:0,duration:.6},(W(70)+0.4));
+tl.to('#H-cta',{scale:1.07,duration:.45,yoyo:true,repeat:5,ease:'sine.inOut'},(W(71)+0.26));
+tl.to({}, {duration:0}, DURATION);
+
+window.TL = tl; window.DURATION = DURATION;
+window.seek = t => { tl.seek(t, false); };
+seek(0);
+</script>
+</body>
+</html>

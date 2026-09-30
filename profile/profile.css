@@ -1,0 +1,87 @@
+/* =====================================================================
+   Bahar Al-Sharq — Company Profile 2026  ·  A4 portrait (210 × 297 mm)
+   One typeface (IBM Plex Sans Arabic), one blue family, yellow as accent only.
+   ===================================================================== */
+@font-face{font-family:Plex;src:url(assets/fonts/PlexArabic-300.ttf);font-weight:300}
+@font-face{font-family:Plex;src:url(assets/fonts/PlexArabic-400.ttf);font-weight:400}
+@font-face{font-family:Plex;src:url(assets/fonts/PlexArabic-500.ttf);font-weight:500}
+@font-face{font-family:Plex;src:url(assets/fonts/PlexArabic-600.ttf);font-weight:600}
+@font-face{font-family:Plex;src:url(assets/fonts/PlexArabic-700.ttf);font-weight:700}
+
+:root{
+  --navy:#0d2f52;     /* headings, back cover */
+  --blue:#1f5f94;     /* brand blue */
+  --tint:#eef3f8;     /* light blue panels */
+  --stone:#f5f6f8;    /* neutral panel */
+  --sun:#f6b400;      /* brand accent, used sparingly */
+  --text:#2c3746;     /* body */
+  --muted:#6f7c8d;    /* captions */
+  --rule:#d9e0e8;     /* hairlines */
+  --m:16mm;           /* side margin */
+}
+@page{size:210mm 297mm;margin:0}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:#9aa3ad}
+body{font-family:Plex,sans-serif;color:var(--text);font-size:10pt;line-height:1.8;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+img{display:block}
+b,strong{font-weight:600;color:var(--navy)}
+
+.page{width:210mm;height:297mm;position:relative;overflow:hidden;background:#fff;
+      padding:14mm var(--m) 0;display:flex;flex-direction:column;break-after:page;page-break-after:always}
+.page:last-child{break-after:auto;page-break-after:auto}
+
+/* running header / footer */
+.run{display:flex;justify-content:space-between;align-items:center;height:9mm;border-bottom:.3mm solid var(--rule);margin-bottom:10mm;flex:none}
+.run .sec{font-size:7.5pt;font-weight:500;color:var(--muted);letter-spacing:.02em}
+.run .sec i{font-style:normal;color:var(--blue);font-weight:600;margin-left:2mm}
+.run img{height:6.2mm}
+.foot{position:absolute;left:var(--m);right:var(--m);bottom:9mm;display:flex;justify-content:space-between;align-items:center;font-size:7pt;color:var(--muted)}
+.foot .pn{font-weight:600;color:var(--navy);font-size:8pt;font-variant-numeric:tabular-nums}
+.foot .pn::before{content:"";display:inline-block;width:6mm;height:.6mm;background:var(--sun);vertical-align:middle;margin-left:2.5mm}
+
+/* type */
+.eyebrow{display:flex;align-items:center;gap:3mm;font-size:8.5pt;font-weight:600;color:var(--blue);margin-bottom:3mm}
+.eyebrow::before{content:"";width:9mm;height:.8mm;background:var(--sun)}
+h1{font-weight:700;color:var(--navy);font-size:30pt;line-height:1.35}
+h2{font-weight:700;color:var(--navy);font-size:22pt;line-height:1.4;margin-bottom:5mm}
+h2 span,h1 span{color:var(--blue)}
+h3{font-weight:600;color:var(--navy);font-size:12pt;line-height:1.5;margin-bottom:1.5mm}
+h4{font-weight:600;color:var(--navy);font-size:10pt;line-height:1.5}
+.lead{font-size:11.5pt;line-height:1.85;font-weight:400;color:var(--text)}
+.small{font-size:8.5pt;line-height:1.7;color:var(--muted)}
+p+p{margin-top:2.5mm}
+
+/* photos: square corners, no shadows */
+.ph{position:relative;overflow:hidden;background:var(--stone)}
+.ph img{width:100%;height:100%;object-fit:cover}
+.cap{font-size:7.5pt;color:var(--muted);margin-top:2mm;line-height:1.5}
+.cap b{color:var(--navy);font-weight:600;margin-left:1.5mm}
+.bleed{margin-left:calc(-1 * var(--m));margin-right:calc(-1 * var(--m))}
+
+/* layout helpers */
+.row{display:grid;gap:7mm}
+.c2{grid-template-columns:1fr 1fr}
+.c3{grid-template-columns:repeat(3,1fr)}
+.c4{grid-template-columns:repeat(4,1fr)}
+.min0>*{min-width:0}
+.mt4{margin-top:4mm}.mt6{margin-top:6mm}.mt8{margin-top:8mm}.mt10{margin-top:10mm}
+
+/* key/value spec table */
+.spec{width:100%;border-collapse:collapse;font-size:8.8pt}
+.spec th,.spec td{padding:2.3mm 0;border-bottom:.3mm solid var(--rule);text-align:right;vertical-align:top}
+.spec th{font-weight:500;color:var(--muted);width:38%}
+.spec td{font-weight:500;color:var(--navy)}
+.spec tr:first-child th,.spec tr:first-child td{border-top:.5mm solid var(--navy)}
+.ltr{direction:ltr;unicode-bidi:isolate;display:inline-block}
+
+/* list with short yellow dash */
+.list{list-style:none;display:grid;gap:2mm}
+.list li{position:relative;padding-right:5mm}
+.list li::before{content:"";position:absolute;right:0;top:3.2mm;width:2.4mm;height:.6mm;background:var(--sun)}
+
+/* item blocks separated by hairlines */
+.item{border-top:.4mm solid var(--navy);padding-top:3mm}
+.item .n{font-size:8pt;font-weight:600;color:var(--sun);display:block;margin-bottom:.5mm;font-variant-numeric:tabular-nums}
+.item p{font-size:9.2pt;line-height:1.75}
+
+.panel{background:var(--tint);padding:7mm}

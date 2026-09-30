@@ -24,5 +24,5 @@
   فيديوهات مضغوطة تتوقف تلقائياً خارج الشاشة، واحترام إعداد «تقليل الحركة».
 
 ## التعديل
-- المحتوى في `src/index.src.html` و `src/build.py`، ثم: `python3 src/build.py` لتوليد `index.html`.
+- المحتوى في `src/index.ar.src.html` (العربية — الافتراضية على `/`) و `src/index.en.src.html` (الإنجليزية على `/en/`) و `src/build.py`، ثم: `python3 src/build.py` لتوليد الصفحتين.
 - رقم واتساب في `assets/js/main.js` (`WA`) وفي روابط `wa.me` داخل الصفحة.

@@ -37,53 +37,84 @@ def img(idn, sizes="100vw", alt="", extra="", lazy=True):
             f'sizes="{sizes}" width="{w}" height="{h}" alt="{alt}"{load} {extra}>').replace(" >", ">")
 
 
-SERVICES = [
- ("0363", "01", "الشاشات المتنقلة", "شاحنات بشاشات LED ملوّنة تجوب شوارع عدن وتقف حيث يتجمّع جمهورك، ليلاً ونهاراً.", ["3 واجهات", "حجز يومي", "تقارير"], "#mobile"),
- ("0044", "02", "الشاشات الثابتة", "شاشات عملاقة في مواقع استراتيجية، أبرزها شاشة سوق عدن الدولي بمساحة 60 م².", ["10×6 م", "24/7", "آلاف الزوار"], "#fixed"),
- ("0215", "03", "شاشات الفعاليات", "تأجير شاشات داخلية وخارجية بأحجام متعددة مع التركيب والتشغيل والبث.", ["مؤتمرات", "مهرجانات", "بث مباشر"], "#events"),
- ("0187", "04", "التوريد والتركيب", "وكلاء لمصنع شاشات LED — ننفّذ مشاريع الشاشات العملاقة تسليم مفتاح.", ["Outdoor P5", "Indoor P2.5", "صيانة"], "#supply"),
- ("0367", "05", "التسويق الرقمي", "إدارة الصفحات والحملات الممولة وصناعة المحتوى الذي يحمل حملتك إلى كل هاتف.", ["إعلانات ممولة", "محتوى", "تحليل"], "#digital"),
- ("0122", "06", "الإنتاج الإبداعي", "هوية بصرية، تصميم، تصوير، مونتاج، موشن جرافيك ومحتوى 3D لشاشاتنا ومنصّاتك.", ["هوية", "موشن", "3D / CGI"], "#digital"),
+SERVICES = {
+ "ar": [
+  ("0363", "01", "الشاشات المتنقلة", "شاحنات بشاشات LED ملوّنة تجوب شوارع عدن وتقف حيث يتجمّع جمهورك، ليلاً ونهاراً.", ["3 واجهات", "حجز يومي", "تقارير"], "#mobile"),
+  ("0044", "02", "الشاشات الثابتة", "شاشات عملاقة في مواقع استراتيجية، أبرزها شاشة سوق عدن الدولي بمساحة 60 م².", ["10×6 م", "24/7", "آلاف الزوار"], "#fixed"),
+  ("0215", "03", "شاشات الفعاليات", "تأجير شاشات داخلية وخارجية بأحجام متعددة مع التركيب والتشغيل والبث.", ["مؤتمرات", "مهرجانات", "بث مباشر"], "#events"),
+  ("0187", "04", "التوريد والتركيب", "وكلاء لمصنع شاشات LED — ننفّذ مشاريع الشاشات العملاقة تسليم مفتاح.", ["Outdoor P5", "Indoor P2.5", "صيانة"], "#supply"),
+  ("0367", "05", "التسويق الرقمي", "إدارة الصفحات والحملات الممولة وصناعة المحتوى الذي يحمل حملتك إلى كل هاتف.", ["إعلانات ممولة", "محتوى", "تحليل"], "#digital"),
+  ("0122", "06", "الإنتاج الإبداعي", "هوية بصرية، تصميم، تصوير، مونتاج، موشن جرافيك ومحتوى 3D لشاشاتنا ومنصّاتك.", ["هوية", "موشن", "3D / CGI"], "#digital")],
+ "en": [
+  ("0363", "01", "Mobile LED trucks", "Full-color LED trucks that drive Aden's busiest streets and park where your audience gathers, day and night.", ["3 faces", "Daily booking", "Reports"], "#mobile"),
+  ("0044", "02", "Fixed digital screens", "Giant screens in strategic locations — led by the 60 m² screen at Aden International Market.", ["10×6 m", "24/7", "1000s daily"], "#fixed"),
+  ("0215", "03", "Event screens", "Indoor and outdoor LED screens in every size, with installation, operation and live feeds.", ["Conferences", "Festivals", "Live"], "#events"),
+  ("0187", "04", "Supply & installation", "Agents for an LED manufacturer — we deliver giant-screen projects turnkey.", ["Outdoor P5", "Indoor P2.5", "Maintenance"], "#supply"),
+  ("0367", "05", "Digital marketing", "Page management, paid campaigns and content that carries your campaign to every phone.", ["Paid ads", "Content", "Analytics"], "#digital"),
+  ("0122", "06", "Creative production", "Identity, design, photography, editing, motion graphics and 3D content for our screens and your channels.", ["Identity", "Motion", "3D / CGI"], "#digital")],
+}
+STEPS = {
+ "ar": [("نفهم", "هدفك وجمهورك وميزانيتك."), ("نخطّط", "القنوات والمواقع والتوقيت."), ("نُنتج", "محتوى جاهز لكل شاشة ومنصّة."),
+        ("نُطلق", "على الشاحنات والشاشات والفعاليات."), ("نوسّع", "الحملة رقمياً إلى الهواتف."), ("نوثّق", "صور وتقارير بما تم عرضه.")],
+ "en": [("Understand", "Your goal, audience and budget."), ("Plan", "Channels, locations and timing."), ("Produce", "Content ready for every screen."),
+        ("Launch", "On trucks, screens and at events."), ("Amplify", "The campaign onto phones."), ("Report", "Photos and proof of display.")],
+}
+GALLERY = [  # id, category, Arabic caption, English caption
+ ("0180", "mobile", "حملة رمضانية ليلاً", "Ramadan campaign at night"), ("0069", "mobile", "MIXA — إطلاق مشروب طاقة", "MIXA — energy drink launch"),
+ ("0369", "events", "مهرجان على كورنيش عدن", "Festival on Aden's corniche"), ("0368", "mobile", "السنابل — حملة ليلية", "Al-Sanabil — night campaign"),
+ ("0175", "fixed", "شاشة سوق عدن الدولي", "Aden International Market screen"), ("0241", "mobile", "EPC — أمام جبال عدن", "EPC — against Aden's mountains"),
+ ("0215", "events", "بث جماهيري في ساحة مفتوحة", "Public screening in an open square"), ("0260", "mobile", "الجامعة الألمانية الدولية – عدن", "German International University — Aden"),
+ ("0135", "install", "تركيب الهيكل المعدني", "Building the steel structure"), ("0237", "mobile", "في قلب حركة المرور", "In the heart of traffic"),
+ ("0099", "mobile", "TEDx Aden Youth", "TEDx Aden Youth"), ("0372", "events", "فعالية جماهيرية", "Public event"),
+ ("0229", "mobile", "المقبلي للطاقة", "Almokbily Energy"), ("0151", "install", "فريقنا على الارتفاع", "Our team at height"),
+ ("0080", "mobile", "NAS Group", "NAS Group"), ("0062", "fixed", "موقع شاشة سوق عدن الدولي", "The Aden International Market site"),
+ ("0124", "mobile", "محتوى 3D على الشاشة", "3D content on screen"), ("0187", "install", "التخطيط في الموقع", "Planning on site"),
+ ("0113", "mobile", "وضوح عالٍ نهاراً", "Bright and clear in daylight"), ("0078", "events", "مهرجان الإفطار", "Iftar festival"),
+ ("0350", "mobile", "حملة منتجات ليلاً", "Product campaign at night"),
 ]
-STEPS = [("نفهم", "هدفك وجمهورك وميزانيتك."), ("نخطّط", "القنوات والمواقع والتوقيت."), ("نُنتج", "محتوى جاهز لكل شاشة ومنصّة."),
-         ("نُطلق", "على الشاحنات والشاشات والفعاليات."), ("نوسّع", "الحملة رقمياً إلى الهواتف."), ("نوثّق", "صور وتقارير بما تم عرضه.")]
-GALLERY = [
- ("0180", "mobile", "حملة رمضانية ليلاً"), ("0069", "mobile", "MIXA — إطلاق مشروب طاقة"), ("0369", "events", "مهرجان على كورنيش عدن"),
- ("0368", "mobile", "السنابل — حملة ليلية"), ("0175", "fixed", "شاشة سوق عدن الدولي"), ("0241", "mobile", "EPC — أمام جبال عدن"),
- ("0215", "events", "بث جماهيري في ساحة مفتوحة"), ("0260", "mobile", "الجامعة الألمانية الدولية – عدن"), ("0135", "install", "تركيب الهيكل المعدني"),
- ("0237", "mobile", "في قلب حركة المرور"), ("0099", "mobile", "TEDx Aden Youth"), ("0372", "events", "فعالية جماهيرية"),
- ("0229", "mobile", "المقبلي للطاقة"), ("0151", "install", "فريقنا على الارتفاع"), ("0080", "mobile", "NAS Group"),
- ("0062", "fixed", "موقع شاشة سوق عدن الدولي"), ("0124", "mobile", "محتوى 3D على الشاشة"), ("0187", "install", "التخطيط في الموقع"),
- ("0113", "mobile", "وضوح عالٍ نهاراً"), ("0078", "events", "مهرجان الإفطار"), ("0350", "mobile", "حملة منتجات ليلاً"),
-]
-CLIENTS = [("بنك عدن الإسلامي", "للتمويل الأصغر"), ("الجامعة الألمانية الدولية", "عدن"), ("TEDx Aden Youth", "فعاليات"),
-           ("Yemen Angel Network", "فعاليات"), ("MIXA", "مشروبات"), ("المقبلي للطاقة", "طاقة"), ("السنابل", "أغذية"),
-           ("NAS Group", "سفر وسياحة"), ("EPC", "خدمات"), ("Crystal", "شراكة"), ("الجيلاني التجارية", "تجارة"), ("وغيرهم", "في عدن واليمن")]
-MARQ = ["الشاشات المتنقلة", "الشاشات الثابتة", "شاشات الفعاليات", "توريد وتركيب", "تسويق رقمي", "موشن جرافيك", "3D", "هوية بصرية"]
-MARQ2 = ["MIXA", "المقبلي للطاقة", "TEDx Aden Youth", "السنابل", "NAS Group", "الجامعة الألمانية الدولية", "EPC", "Crystal", "بنك عدن الإسلامي"]
+CLIENTS = {
+ "ar": [("بنك عدن الإسلامي", "للتمويل الأصغر"), ("الجامعة الألمانية الدولية", "عدن"), ("TEDx Aden Youth", "فعاليات"),
+        ("Yemen Angel Network", "فعاليات"), ("MIXA", "مشروبات"), ("المقبلي للطاقة", "طاقة"), ("السنابل", "أغذية"),
+        ("NAS Group", "سفر وسياحة"), ("EPC", "خدمات"), ("Crystal", "شراكة"), ("الجيلاني التجارية", "تجارة"), ("وغيرهم", "في عدن واليمن")],
+ "en": [("Aden Islamic Bank", "Microfinance"), ("German Int'l University", "Aden"), ("TEDx Aden Youth", "Events"),
+        ("Yemen Angel Network", "Events"), ("MIXA", "Beverages"), ("Almokbily Energy", "Energy"), ("Al-Sanabil", "Food"),
+        ("NAS Group", "Travel"), ("EPC", "Services"), ("Crystal", "Partner"), ("Al-Jeelani Trading", "Trade"), ("And more", "across Aden & Yemen")],
+}
+MARQ = {"ar": ["الشاشات المتنقلة", "الشاشات الثابتة", "شاشات الفعاليات", "توريد وتركيب", "تسويق رقمي", "موشن جرافيك", "3D", "هوية بصرية"],
+        "en": ["Mobile LED trucks", "Fixed screens", "Event screens", "Supply & install", "Digital marketing", "Motion graphics", "3D", "Brand identity"]}
+MARQ2 = {"ar": ["MIXA", "المقبلي للطاقة", "TEDx Aden Youth", "السنابل", "NAS Group", "الجامعة الألمانية الدولية", "EPC", "Crystal", "بنك عدن الإسلامي"],
+         "en": ["MIXA", "Almokbily Energy", "TEDx Aden Youth", "Al-Sanabil", "NAS Group", "German Int'l University", "EPC", "Crystal", "Aden Islamic Bank"]}
+VIEW = {"ar": "عرض", "en": "View"}
 
 
-def build():
-    s = (ROOT / "src/index.src.html").read_text()
-    s = s.replace(' style-hook', '').replace(' class="mt"', '')
-    s = s.replace("{{marquee}}", "".join(f"<span>{m}</span>" for m in MARQ * 4))
-    s = s.replace("{{marquee2}}", "".join(f"<span>{m}</span>" for m in MARQ2 * 3))
+def build(lang):
+    s = (ROOT / f"src/index.{lang}.src.html").read_text()
+    s = s.replace("{{marquee}}", "".join(f"<span>{m}</span>" for m in MARQ[lang] * 4))
+    s = s.replace("{{marquee2}}", "".join(f"<span>{m}</span>" for m in MARQ2[lang] * 3))
     s = s.replace("{{services}}", "".join(
         f'<a class="svc" href="{href}">{img(i, "(max-width:1023px) 100vw, 32vw", t)}<span class="num">{n}</span>'
         f'<div class="body"><h3>{t}</h3><p>{d}</p><ul>{"".join(f"<li>{x}</li>" for x in tags)}</ul></div></a>'
-        for i, n, t, d, tags, href in SERVICES))
+        for i, n, t, d, tags, href in SERVICES[lang]))
     s = s.replace("{{steps}}", "".join(
-        f'<div class="step" data-reveal><div class="dot">{k+1:02d}</div><h3>{a}</h3><p>{b}</p></div>' for k, (a, b) in enumerate(STEPS)))
+        f'<div class="step" data-reveal><div class="dot">{k+1:02d}</div><h3>{a}</h3><p>{b}</p></div>' for k, (a, b) in enumerate(STEPS[lang])))
     s = s.replace("{{gallery}}", "".join(
-        f'<figure class="g-item" data-cat="{c}" tabindex="0" role="button" aria-label="عرض: {cap}" data-full="assets/img/{i}.webp">'
-        f'{img(i, "(max-width:700px) 50vw, 25vw", cap)}<figcaption>{cap}</figcaption></figure>' for i, c, cap in GALLERY))
-    s = s.replace("{{clients}}", "".join(f'<div class="client" data-reveal>{a}<small>{b}</small></div>' for a, b in CLIENTS))
+        f'<figure class="g-item" data-cat="{c}" tabindex="0" role="button" aria-label="{VIEW[lang]}: {ar if lang == "ar" else en}" data-full="assets/img/{i}.webp">'
+        f'{img(i, "(max-width:700px) 50vw, 25vw", ar if lang == "ar" else en)}<figcaption>{ar if lang == "ar" else en}</figcaption></figure>'
+        for i, c, ar, en in GALLERY))
+    s = s.replace("{{clients}}", "".join(f'<div class="client" data-reveal>{a}<small>{b}</small></div>' for a, b in CLIENTS[lang]))
     s = re.sub(r"\{\{img:([^|}]+)\|([^|}]*)\|([^|}]*)(?:\|([^}]*))?\}\}", lambda m: img(m[1], m[2], m[3], m[4] or ""), s)
     s = re.sub(r"\{\{icon:(\w+)\}\}", lambda m: ICONS[m[1]], s)
     assert "{{" not in s, re.findall(r"\{\{[^}]*\}\}", s)[:3]
-    (ROOT / "index.html").write_text(s)
-    print("index.html", len(s) // 1024, "KB")
+    if lang == "ar":
+        out = ROOT / "index.html"
+    else:                                   # /en/ lives one folder down
+        s = s.replace('"assets/', '"../assets/').replace(", assets/", ", ../assets/")
+        (ROOT / "en").mkdir(exist_ok=True)
+        out = ROOT / "en/index.html"
+    out.write_text(s)
+    print(out.relative_to(ROOT), len(s) // 1024, "KB")
 
 
 if __name__ == "__main__":
-    build()
+    build("ar")
+    build("en")

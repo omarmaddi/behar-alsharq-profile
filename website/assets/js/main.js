@@ -2,7 +2,16 @@
 (() => {
   'use strict';
   const doc = document.documentElement;
-  doc.classList.remove('no-js'); doc.classList.add('js'); doc.lang = 'ar'; doc.dir = 'rtl';
+  doc.classList.remove('no-js'); doc.classList.add('js');
+  const LANG = document.body.dataset.lang === 'en' ? 'en' : 'ar';
+  doc.lang = LANG; doc.dir = LANG === 'en' ? 'ltr' : 'rtl';            // also covers embedded previews
+  const RTL = LANG === 'ar';
+  const T = {
+    ar: { open: 'فتح القائمة', close: 'إغلاق القائمة', name: 'الرجاء كتابة الاسم', phone: 'الرجاء كتابة رقم صحيح', view: 'عرض', discover: 'اكتشف',
+          msg: (n, p, s, m) => `مرحباً بحار الشرق 👋\nالاسم: ${n}\nالجوال: ${p}\nالخدمة: ${s}${m ? `\nالتفاصيل: ${m}` : ''}` },
+    en: { open: 'Open menu', close: 'Close menu', name: 'Please enter your name', phone: 'Please enter a valid number', view: 'View', discover: 'Explore',
+          msg: (n, p, s, m) => `Hello Bahar Al-Sharq 👋\nName: ${n}\nMobile: ${p}\nService: ${s}${m ? `\nDetails: ${m}` : ''}` }
+  }[LANG];
   const $ = (s, c = document) => c.querySelector(s);
   const $$ = (s, c = document) => [...c.querySelectorAll(s)];
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -52,7 +61,7 @@
 
   /* ---------- mobile menu ---------- */
   const burger = $('#burger');
-  const setMenu = open => { doc.classList.toggle('menu-open', open); burger.setAttribute('aria-expanded', open); burger.setAttribute('aria-label', open ? 'إغلاق القائمة' : 'فتح القائمة'); document.body.style.overflow = open ? 'hidden' : ''; };
+  const setMenu = open => { doc.classList.toggle('menu-open', open); burger.setAttribute('aria-expanded', open); burger.setAttribute('aria-label', open ? T.close : T.open); document.body.style.overflow = open ? 'hidden' : ''; };
   burger.addEventListener('click', () => setMenu(!doc.classList.contains('menu-open')));
   $$('#mobile-menu a').forEach(a => a.addEventListener('click', () => setMenu(false)));
   addEventListener('keydown', e => { if (e.key === 'Escape') { setMenu(false); closeLB(); } });
@@ -98,10 +107,10 @@
     const name = clean(form.name.value), phone = clean(form.phone.value), svc = clean(form.service.value), msg = clean(form.message.value);
     let ok = true;
     const err = (el, t) => { el.closest('.field').querySelector('.err').textContent = t; if (t) ok = false; };
-    err(form.name, name.length < 2 ? 'الرجاء كتابة الاسم' : '');
-    err(form.phone, /^[+0-9\s-]{7,20}$/.test(phone) ? '' : 'الرجاء كتابة رقم صحيح');
+    err(form.name, name.length < 2 ? T.name : '');
+    err(form.phone, /^[+0-9\s-]{7,20}$/.test(phone) ? '' : T.phone);
     if (!ok) return;
-    const text = `مرحباً بحار الشرق 👋\nالاسم: ${name}\nالجوال: ${phone}\nالخدمة: ${svc}${msg ? `\nالتفاصيل: ${msg}` : ''}`;
+    const text = T.msg(name, phone, svc, msg);
     window.open(`https://wa.me/${WA}?text=${encodeURIComponent(text)}`, '_blank', 'noopener');
   });
 
@@ -109,7 +118,7 @@
   const book = $('#book');
   if (fine && !reduce) {
     const cover = $('.cover', book);
-    book.addEventListener('pointermove', e => { const r = book.getBoundingClientRect(); const x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5; cover.style.transform = `rotateY(${-18 + x * 24}deg) rotateX(${6 - y * 16}deg)`; });
+    book.addEventListener('pointermove', e => { const r = book.getBoundingClientRect(); const x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5; cover.style.transform = `rotateY(${(RTL ? -18 : 18) + x * 24}deg) rotateX(${6 - y * 16}deg)`; });
     book.addEventListener('pointerleave', () => { cover.style.transform = ''; });
   }
 
@@ -121,7 +130,7 @@
     addEventListener('pointermove', e => { doc.classList.add('cursor-live'); mx = e.clientX; my = e.clientY; d.style.transform = `translate(${mx}px,${my}px)`; }, { passive: true });
     (function loop() { cx += (mx - cx) * .18; cy += (my - cy) * .18; c.style.transform = `translate(${cx}px,${cy}px)`; requestAnimationFrame(loop); })();
     $$('a,button,.g-item').forEach(el => {
-      el.addEventListener('pointerenter', () => { c.classList.toggle('big', el.classList.contains('g-item') || el.classList.contains('svc')); c.textContent = el.classList.contains('g-item') ? 'عرض' : el.classList.contains('svc') ? 'اكتشف' : ''; c.style.opacity = el.classList.contains('g-item') || el.classList.contains('svc') ? 1 : .6; });
+      el.addEventListener('pointerenter', () => { c.classList.toggle('big', el.classList.contains('g-item') || el.classList.contains('svc')); c.textContent = el.classList.contains('g-item') ? T.view : el.classList.contains('svc') ? T.discover : ''; c.style.opacity = el.classList.contains('g-item') || el.classList.contains('svc') ? 1 : .6; });
       el.addEventListener('pointerleave', () => { c.classList.remove('big'); c.textContent = ''; c.style.opacity = 1; });
     });
     $$('.magnetic').forEach(b => {
@@ -154,6 +163,7 @@
   const ready = new Promise(r => { if (document.readyState === 'complete') r(); else addEventListener('load', r); });
   Promise.race([Promise.all([ready, new Promise(r => setTimeout(r, 1500))]), new Promise(r => setTimeout(r, 3500))]).then(() => {
     gsap.to('#loader', { yPercent: -100, duration: .9, ease: 'power4.inOut', onComplete: () => { doc.classList.add('loaded'); ScrollTrigger.refresh(); } });
+    document.fonts && document.fonts.ready.then(() => ScrollTrigger.refresh());
     heroIntro();
   });
 
@@ -176,8 +186,17 @@
   }
 
   /* ---------- reveals ---------- */
-  ScrollTrigger.batch('[data-reveal]', { start: 'top 88%', once: true, onEnter: b => gsap.to(b, { opacity: 1, y: 0, duration: .9, stagger: .08, ease: 'power3.out' }) });
-  $$('[data-clip]').forEach(el => gsap.to(el, { clipPath: 'inset(0 0 0% 0)', duration: 1.3, ease: 'power4.inOut', scrollTrigger: { trigger: el, start: 'top 82%', once: true } }));
+  // reveals use IntersectionObserver so anchor jumps and fast scrolls never leave content hidden
+  let queue = [], qt = 0;
+  const flush = () => { gsap.to(queue, { opacity: 1, y: 0, duration: .9, stagger: .08, ease: 'power3.out' }); queue = []; };
+  const rio = new IntersectionObserver(es => es.forEach(e => {
+    const el = e.target;
+    if (!e.isIntersecting && e.boundingClientRect.top > 0) return;       // still below the fold
+    rio.unobserve(el);
+    if (el.hasAttribute('data-clip')) gsap.to(el, { clipPath: 'inset(0 0 0% 0)', duration: 1.3, ease: 'power4.inOut' });
+    else { queue.push(el); clearTimeout(qt); qt = setTimeout(flush, 30); }
+  }), { rootMargin: '0px 0px -10% 0px' });
+  $$('[data-reveal],[data-clip]').forEach(el => rio.observe(el));
   $$('[data-speed]').forEach(el => gsap.fromTo(el, { yPercent: -+el.dataset.speed * 50 }, { yPercent: +el.dataset.speed * 50, ease: 'none', scrollTrigger: { trigger: el.parentElement, start: 'top bottom', end: 'bottom top', scrub: true } }));
 
   /* ---------- counters ---------- */
@@ -191,7 +210,7 @@
     '(min-width:1024px)': () => {
       const track = $('#svc-track');
       const dist = () => Math.max(0, track.scrollWidth - innerWidth);
-      const tw = gsap.to(track, { x: dist, ease: 'none', scrollTrigger: { trigger: '#services', start: 'top top', end: () => '+=' + dist(), pin: true, scrub: .6, invalidateOnRefresh: true, anticipatePin: 1 } });
+      const tw = gsap.to(track, { x: () => (RTL ? 1 : -1) * dist(), ease: 'none', scrollTrigger: { trigger: '#services', start: 'top top', end: () => '+=' + dist(), pin: true, scrub: .6, invalidateOnRefresh: true, anticipatePin: 1 } });
       return () => tw.kill();
     },
     '(max-width:1023px)': () => {

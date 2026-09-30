@@ -1,0 +1,535 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1920">
+<title>بحار الشرق — ملف الشركة 2026</title>
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="pages.css">
+</head>
+<body>
+
+<!-- ============ ICON SPRITE ============ -->
+<svg width="0" height="0" style="position:absolute">
+  <symbol id="i-truck" viewBox="0 0 24 24"><rect x="1.5" y="5" width="13" height="10" rx="1"/><path d="M14.5 9h4l3 3.2V15h-7z"/><circle cx="6" cy="17.5" r="1.8"/><circle cx="17.5" cy="17.5" r="1.8"/><path d="M4.5 8.5h7M4.5 11.5h5"/></symbol>
+  <symbol id="i-board" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="12" rx="1.2"/><path d="M8 15v6M16 15v6M5 21h14M6 7l3 3 3-2.5 3 3 3-3.5"/></symbol>
+  <symbol id="i-stage" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="11" rx="1"/><path d="M10 6.5v4.5l4-2.25z"/><circle cx="5" cy="19" r="1.6"/><circle cx="10" cy="19" r="1.6"/><circle cx="15" cy="19" r="1.6"/><circle cx="20" cy="19" r="1.4"/></symbol>
+  <symbol id="i-ship" viewBox="0 0 24 24"><path d="M3 15l1.8 4.5h14.4L21 15z"/><path d="M6 15V9h12v6M9 9V5h6v4"/><path d="M2 21.5c2 0 2-1 4-1s2 1 4 1 2-1 4-1 2 1 4 1 2-1 4-1"/></symbol>
+  <symbol id="i-mega" viewBox="0 0 24 24"><path d="M3 10v4a1 1 0 001 1h3l6 4V5L7 9H4a1 1 0 00-1 1z"/><path d="M16.5 8.5a5 5 0 010 7M19 6a8.5 8.5 0 010 12"/></symbol>
+  <symbol id="i-film" viewBox="0 0 24 24"><rect x="2.5" y="4" width="19" height="16" rx="2"/><path d="M7 4v16M17 4v16M2.5 8H7M2.5 12H7M2.5 16H7M17 8h4.5M17 12h4.5M17 16h4.5"/></symbol>
+  <symbol id="i-pen" viewBox="0 0 24 24"><path d="M12 19l7-7 3 3-7 7z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18z"/><path d="M2 2l7.6 7.6"/><circle cx="11" cy="11" r="2"/></symbol>
+  <symbol id="i-cube" viewBox="0 0 24 24"><path d="M12 2l9 5v10l-9 5-9-5V7z"/><path d="M3 7l9 5 9-5M12 12v10"/></symbol>
+  <symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 2l2.2 6.3L20.5 10l-6.3 2.2L12 18.5l-2.2-6.3L3.5 10l6.3-1.7z"/><path d="M19 16l.9 2.1L22 19l-2.1.9L19 22l-.9-2.1L16 19l2.1-.9z"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M10.5 18.5h3"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.6-3.6 3.2-5.5 6.5-5.5s5.9 1.9 6.5 5.5"/><circle cx="17" cy="7" r="2.6"/><path d="M17 12.5c2.5 0 4.2 1.6 4.6 4.5"/></symbol>
+  <symbol id="i-eye" viewBox="0 0 24 24"><path d="M1.5 12S5.5 4.5 12 4.5 22.5 12 22.5 12 18.5 19.5 12 19.5 1.5 12 1.5 12z"/><circle cx="12" cy="12" r="3.2"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M12 6.5V12l3.5 2.5"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 22s7-6.2 7-12a7 7 0 10-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.6"/></symbol>
+  <symbol id="i-call" viewBox="0 0 24 24"><path d="M21.5 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 011.6 4.2 2 2 0 013.6 2h3a2 2 0 012 1.7c.1 1 .4 1.9.7 2.8a2 2 0 01-.5 2.1L7.6 9.8a16 16 0 006 6l1.2-1.2a2 2 0 012.1-.5c.9.3 1.8.6 2.8.7a2 2 0 011.8 2.1z"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="2" y="4.5" width="20" height="15" rx="2"/><path d="M2.5 6l9.5 7 9.5-7"/></symbol>
+  <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M2.5 12h19M12 2.5c2.6 2.6 3.9 5.8 3.9 9.5S14.6 18.9 12 21.5C9.4 18.9 8.1 15.7 8.1 12S9.4 5.1 12 2.5z"/></symbol>
+  <symbol id="i-at" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M16 8v5a3 3 0 006 0v-1a10 10 0 10-3.9 7.9"/></symbol>
+  <symbol id="i-wrench" viewBox="0 0 24 24"><path d="M14.7 6.3a4.5 4.5 0 005.9 5.9L13 19.8a2.1 2.1 0 01-3-3z"/><path d="M14.7 6.3L17 4a4.5 4.5 0 013.6 3.6l-2.3 2.3"/><path d="M9.5 16.5L3 23"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 2l8 3v6c0 5-3.4 9.3-8 11-4.6-1.7-8-6-8-11V5z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></symbol>
+  <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><circle cx="12" cy="12" r="5.5"/><circle cx="12" cy="12" r="1.5"/></symbol>
+  <symbol id="i-chart" viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 6-7"/><path d="M16 7h4v4"/></symbol>
+  <symbol id="i-layers" viewBox="0 0 24 24"><path d="M12 2l10 5-10 5L2 7z"/><path d="M2 12l10 5 10-5M2 17l10 5 10-5"/></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M10 8.2v7.6l6-3.8z"/></symbol>
+  <symbol id="i-compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M15.8 8.2l-2 5.6-5.6 2 2-5.6z"/></symbol>
+  <symbol id="i-hand" viewBox="0 0 24 24"><path d="M11 17l-1.5 1.5a2 2 0 01-2.8 0l-4.2-4.2a2 2 0 010-2.8L7 7l4 1 3-2 3.5 1 4.5 4.5"/><path d="M8 13l2 2M11 11l3 3M14 9l3.5 3.5a1.8 1.8 0 01-2.5 2.5"/></symbol>
+  <symbol id="i-bulb" viewBox="0 0 24 24"><path d="M9 18h6M10 21.5h4"/><path d="M12 2.5a6.5 6.5 0 00-4 11.6c.7.6 1 1.4 1 2.2V17h6v-.7c0-.8.4-1.6 1-2.2A6.5 6.5 0 0012 2.5z"/></symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.5"/><path d="M12 1.5v2.5M12 20v2.5M1.5 12H4M20 12h2.5M4.6 4.6l1.8 1.8M17.6 17.6l1.8 1.8M4.6 19.4l1.8-1.8M17.6 6.4l1.8-1.8"/></symbol>
+  <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></symbol>
+  <symbol id="i-drop" viewBox="0 0 24 24"><path d="M12 2.5s7 7.6 7 12.5a7 7 0 01-14 0c0-4.9 7-12.5 7-12.5z"/></symbol>
+  <symbol id="i-wifi" viewBox="0 0 24 24"><path d="M2 8.8a15 15 0 0120 0M5 12.5a10.5 10.5 0 0114 0M8.5 16a5.5 5.5 0 017 0"/><circle cx="12" cy="19.5" r="1"/></symbol>
+  <symbol id="i-hd" viewBox="0 0 24 24"><rect x="2" y="4.5" width="20" height="15" rx="2.5"/><path d="M6.5 9v6M10.5 9v6M6.5 12h4M14 9v6h1.8a3 3 0 000-6z"/></symbol>
+</svg>
+
+<!-- ======================= 01 · COVER ======================= -->
+<section class="page p-cover">
+  <img class="cover-img" src="assets/img/0367.jpg" alt="">
+  <div class="shade"></div>
+  <div class="led"></div>
+  <img class="logo" src="assets/logo/logo-h-white.svg" alt="بحار الشرق">
+  <div class="tagtop latin">COMPANY PROFILE <span class="sun">/</span> 2026</div>
+  <div class="content">
+    <div class="kicker">بحار الشرق للتسويق والإعلان · عدن</div>
+    <h1>نجعلك<br><span class="sun">مرئيّاً</span><em>.</em></h1>
+    <p>إعلانك لا ينتظر المارّة… بل يذهب إليهم.<br>من شوارع عدن إلى أكبر الشاشات، ومن المسرح إلى هاتفك.</p>
+  </div>
+  <div class="services-bar">
+    <span>الشاشات المتنقلة</span><i></i><span>الشاشات الثابتة</span><i></i><span>شاشات الفعاليات</span><i></i><span>استيراد وتوريد وتركيب</span><i></i><span>التسويق الرقمي</span><i></i><span>الإنتاج الإبداعي</span>
+  </div>
+  <svg class="wave" style="bottom:-2px;height:120px" viewBox="0 0 1920 120" preserveAspectRatio="none"><path d="M0 70 C320 10 640 120 960 60 S1600 10 1920 60 V120 H0z" fill="#1f5f94" opacity=".55"/><path d="M0 95 C360 40 700 125 1020 80 S1650 50 1920 90 V120 H0z" fill="#06142b"/></svg>
+</section>
+
+<!-- ======================= 02 · ABOUT ======================= -->
+<section class="page light p-about">
+  <div class="text">
+    <div class="kicker">من نحن</div>
+    <h2 class="h-l">من قلب عدن…<br>حيث تلتقي البحار <span class="sun">وتُشرق الشمس</span></h2>
+    <p class="lead">
+      <b>بحار الشرق</b> شركة إبداعية متكاملة للتسويق والإعلان، تعمل في شوارع عدن وشاشاتها ومسارحها. نقدّم حلولاً تدمج الأفكار الغزيرة بالأدوات المتطورة لصناعة حضور بصري فارق:
+      شاحنات LED متنقلة، شاشات رقمية خارجية ثابتة، تقنيات الفعاليات، استيراد وتركيب الشاشات العملاقة، الإنتاج المرئي، والحملات الرقمية التي تحمل كل ذلك أبعد.
+    </p>
+    <p class="quote">«نحن أكثر من مجرد شركة إعلان… نحن شركاء في صياغة الحضور، وبناء الهوية، ومحرّكون للنجاح التجاري.»</p>
+    <div class="facts">
+      <div><b class="latin">360°</b><span>من الشارع إلى الشاشة<br>إلى الهاتف</span></div>
+      <div><b class="latin">24/7</b><span>شاشات تعمل<br>ليلاً ونهاراً</span></div>
+      <div><b class="latin">1</b><span>فريق واحد ومسار واحد<br>من الفكرة حتى البث</span></div>
+      <div><b class="latin">7</b><span>بحار… وامتداد<br>لا تحدّه شواطئ</span></div>
+    </div>
+  </div>
+  <div class="ph a1"><img src="assets/img/0342.jpg" alt=""><div class="cap">حملة رمضانية · شاشة متنقلة ليلاً</div></div>
+  <div class="ph a2"><img src="assets/img/0369.jpg" alt=""><div class="cap">حضور جماهيري على كورنيش عدن</div></div>
+  <div class="ph a3"><img src="assets/img/0089.jpg" alt=""><div class="cap">فريقنا الميداني</div></div>
+  <div class="foot"></div>
+</section>
+
+<!-- ======================= 03 · CONTENTS ======================= -->
+<section class="page p-toc">
+  <img class="cover-img" src="assets/img/0215.jpg" alt="">
+  <div class="shade"></div>
+  <div class="led"></div>
+  <div class="head">
+    <div class="kicker">المحتوى · الصفحة</div>
+    <h2 class="h-xl">رحلة<br>في بحار<br><span class="sun">التأثير</span></h2>
+    <p class="lead">كل فكرة تستحق أن تُبحر…<br>وكل علامة تجارية تستحق أن تُبحر بجرأة.</p>
+  </div>
+  <ol class="toc">
+    <li><b class="latin">04</b><span>هويتنا وقصة الشعار</span></li>
+    <li><b class="latin">05</b><span>رؤيتنا · رسالتنا · قيمنا</span></li>
+    <li><b class="latin">06</b><span>منظومة خدماتنا</span></li>
+    <li><b class="latin">07</b><span>الشاشات المتنقلة</span></li>
+    <li><b class="latin">10</b><span>الشاشات الثابتة</span></li>
+    <li><b class="latin">11</b><span>شاشات الفعاليات والتأجير</span></li>
+    <li><b class="latin">12</b><span>استيراد · توريد · تركيب</span></li>
+    <li><b class="latin">14</b><span>التسويق الرقمي والإبداع</span></li>
+    <li><b class="latin">15</b><span>كيف نعمل ولماذا نحن</span></li>
+    <li><b class="latin">17</b><span>شركاء النجاح وتواصل معنا</span></li>
+  </ol>
+  <div class="foot"></div>
+</section>
+
+<!-- ======================= 04 · IDENTITY ======================= -->
+<section class="page light p-identity">
+  <div class="left">
+    <div class="halo"></div>
+    <img class="mark" src="assets/logo/logo-icon.svg" alt="">
+    <div class="pin p1"><b>1</b>الشمس المشرقة</div>
+    <div class="pin p2"><b>2</b>سبعة أشعة</div>
+    <div class="pin p3"><b>3</b>زر التشغيل</div>
+    <div class="pin p4"><b>4</b>الأمواج الثنائية</div>
+    <div class="swatches">
+      <div><i style="background:#f6b400"></i><span>أصفر الشروق</span><b class="latin">#F6B400</b></div>
+      <div><i style="background:#1f5f94"></i><span>أزرق البحر</span><b class="latin">#1F5F94</b></div>
+      <div><i style="background:#fff;border:2px solid #dfe5ee"></i><span>أبيض الوضوح</span><b class="latin">#FFFFFF</b></div>
+    </div>
+  </div>
+  <div class="right">
+    <div class="kicker">هويتنا</div>
+    <h2 class="h-l">شعار ليس مجرد رمز…<br><span class="blue">إنه قصة تُروى بصرياً</span></h2>
+    <div class="sym">
+      <div><b class="latin">01</b><h4>الشمس المشرقة</h4><p>الشرق بداية كل شيء وبداية كل حملة؛ رمز أبدي للنهوض والنمو، بلونها الدافئ للطاقة والأمل والتميّز.</p></div>
+      <div><b class="latin">02</b><h4>سبعة أشعة</h4><p>البحار السبعة التي كانت طرقاً للتجارة والتواصل والمعرفة، وانتشار أفكارنا وتأثيرنا في مساحات واسعة.</p></div>
+      <div><b class="latin">03</b><h4>زر التشغيل</h4><p>الدعاية والإعلام والإنتاج البصري… وفكرة الإطلاق والانطلاق.</p></div>
+      <div><b class="latin">04</b><h4>الأمواج الثنائية</h4><p>الحركة المستمرة والتدفّق الإبداعي، بأزرق بحري يمنح الثقة والاحتراف.</p></div>
+    </div>
+    <p class="note">عدن، بتاريخها البحري وموقعها بين البحر الأحمر وبحر العرب وخليج عدن، نقطة التقاء ثلاثة من البحار السبعة: <b>بوابة الشرق إلى العالم.</b></p>
+  </div>
+  <div class="foot"></div>
+</section>
+
+<!-- ======================= 05 · VISION / MISSION / VALUES ======================= -->
+<section class="page p-vmv">
+  <div class="grain"></div>
+  <div class="led"></div>
+  <div class="top">
+    <div class="card vision">
+      <div class="ibox"><svg class="ic"><use href="#i-eye"/></svg></div>
+      <div>
+        <div class="kicker">رؤيتنا</div>
+        <p>أن نصبح الشركة الرائدة الأولى في اليمن والشرق الأوسط في تقديم حلول دعائية وتسويقية شاملة، مبتكرة وفعّالة؛ نُحدث فرقاً حقيقياً في تجربة العميل ونسهم في بناء علامات تجارية استثنائية.</p>
+      </div>
+    </div>
+    <div class="card mission">
+      <div class="ibox"><svg class="ic"><use href="#i-compass"/></svg></div>
+      <div>
+        <div class="kicker">رسالتنا</div>
+        <p>تقديم منظومة متكاملة من الخدمات الدعائية والتسويقية الإبداعية والرقمية، بكفاءة عالية وجودة عالمية، من أجل تعزيز حضور عملائنا ومضاعفة تأثيرهم في السوق.</p>
+      </div>
+    </div>
+  </div>
+  <div class="values-head"><h2 class="h-m">قيمٌ تقود السفينة</h2><span class="line"></span></div>
+  <div class="values">
+    <div><div class="ibox"><svg class="ic"><use href="#i-target"/></svg></div><h4>الاحترافية</h4><p>في كل خطوة، من التواصل حتى التسليم.</p></div>
+    <div><div class="ibox"><svg class="ic"><use href="#i-clock"/></svg></div><h4>الالتزام</h4><p>نلتزم بالمواعيد وبالجودة، وبما نعد به.</p></div>
+    <div><div class="ibox"><svg class="ic"><use href="#i-bulb"/></svg></div><h4>الإبداع</h4><p>نؤمن أن كل فكرة تستحق فرصة لتصبح تحفة بصرية.</p></div>
+    <div><div class="ibox"><svg class="ic"><use href="#i-layers"/></svg></div><h4>المرونة</h4><p>نكيّف حلولنا بما يناسب احتياجات كل عميل وميزانيته.</p></div>
+    <div><div class="ibox"><svg class="ic"><use href="#i-hand"/></svg></div><h4>الشراكة</h4><p>نرى في عملائنا شركاء لرحلة طويلة الأمد.</p></div>
+  </div>
+  <div class="foot"></div>
+</section>
+
+<!-- ======================= 06 · SERVICES ECOSYSTEM ======================= -->
+<section class="page light p-services">
+  <div class="head">
+    <div>
+      <div class="kicker">منظومة خدماتنا</div>
+      <h2 class="h-l">ستّ طرق لنضع علامتك<br>أمام <span class="blue">عدن كلها</span></h2>
+    </div>
+    <p class="lead">مصمَّمة لتعمل معاً: حملة تُوقف حركة الشارع يجب أن تستمر في العمل بعد أن يعود الناس إلى بيوتهم.</p>
+  </div>
+  <div class="grid">
+    <div class="svc"><div class="img"><img src="assets/img/0363.jpg" alt=""><b class="latin">01</b></div><div class="body"><div class="ibox"><svg class="ic"><use href="#i-truck"/></svg></div><div><h4>الشاشات المتنقلة</h4><p>شاحنات LED ملوّنة تجوب الشوارع وتقف حيث الجمهور.</p></div></div></div>
+    <div class="svc"><div class="img"><img src="assets/img/0175.jpg" alt=""><b class="latin">02</b></div><div class="body"><div class="ibox"><svg class="ic"><use href="#i-board"/></svg></div><div><h4>الشاشات الثابتة</h4><p>شاشات عملاقة فوق أكثر التقاطعات والأسواق ازدحاماً.</p></div></div></div>
+    <div class="svc"><div class="img"><img src="assets/img/0049.jpg" alt=""><b class="latin">03</b></div><div class="body"><div class="ibox"><svg class="ic"><use href="#i-stage"/></svg></div><div><h4>شاشات الفعاليات والتأجير</h4><p>شاشات داخلية وخارجية عملاقة بأحجام متعددة لكل مناسبة.</p></div></div></div>
+    <div class="svc"><div class="img"><img src="assets/img/0187.jpg" alt=""><b class="latin">04</b></div><div class="body"><div class="ibox"><svg class="ic"><use href="#i-ship"/></svg></div><div><h4>استيراد · توريد · تركيب</h4><p>وكلاء لمصنع شاشات في الصين، ننفّذ مشاريع الشاشات العملاقة تسليم مفتاح.</p></div></div></div>
+    <div class="svc"><div class="img"><img src="assets/img/0081.jpg" alt=""><b class="latin">05</b></div><div class="body"><div class="ibox"><svg class="ic"><use href="#i-mega"/></svg></div><div><h4>التسويق الرقمي</h4><p>إدارة الصفحات والحملات الممولة وصناعة المحتوى.</p></div></div></div>
+    <div class="svc"><div class="img"><img src="assets/img/0122.jpg" alt=""><b class="latin">06</b></div><div class="body"><div class="ibox"><svg class="ic"><use href="#i-film"/></svg></div><div><h4>الإنتاج الإبداعي</h4><p>هوية، تصميم، مونتاج، إخراج فني، 3D وأنيميشن و CGI.</p></div></div></div>
+  </div>
+  <div class="foot"></div>
+</section>
+
+<!-- ======================= 07 · SECTION: MOBILE ======================= -->
+<section class="page p-opener">
+  <div class="imgwrap"><img src="assets/img/0342.jpg" alt=""><div class="led"></div></div>
+  <div class="panel">
+    <div class="big-num" style="font-size:330px">01</div>
+    <div class="latin en">MOBILE LED TRUCKS</div>
+    <h2 class="h-xl">الشاشات<br><span class="sun">المتنقلة</span></h2>
+    <p class="lead">اللوحات الثابتة تنتظر أن يمرّ الناس بها…<br>شاحناتنا تذهب لتجدهم.</p>
+    <div class="manifesto">نحن لا نبيع مساحة إعلانية…<br><span class="sun">نحن نحرّك الظهور.</span></div>
+  </div>
+  <div class="foot"></div>
+</section>
+
+<!-- ======================= 08 · MOBILE DETAILS ======================= -->
+<section class="page light p-mobile">
+  <div class="ph m1"><img src="assets/img/0260.jpg" alt=""><div class="cap">الجامعة الألمانية الدولية – عدن</div></div>
+  <div class="ph m2"><img src="assets/img/0241.jpg" alt=""><div class="cap">EPC<small>في مواجهة جبال عدن</small></div></div>
+  <div class="ph m3"><img src="assets/img/0201.jpg" alt=""><div class="cap">في قلب حركة المرور</div></div>
+  <div class="text">
+    <div class="kicker">الشاشات المتنقلة</div>
+    <h2 class="h-l">علامتك التجارية…<br><span class="blue">على الطريق</span></h2>
+    <p class="lead">أول شركة في عدن تقدّم خدمة الشاشات الإعلانية المتنقلة. نضع رسالتك على شاشة تتحرك في أكثر شوارع المدينة ازدحاماً، ونركنها حيث يتجمّع الناس بالفعل، بألوان كاملة ليلاً ونهاراً.<br><b>الإعلان على شاحنة ليس إعلاناً على جدار… إنه إعلان على مسار.</b></p>
+    <div class="faces">
+      <svg viewBox="0 0 520 220" class="truck">
+        <rect x="20" y="30" width="330" height="140" rx="6" fill="#1f5f94"/>
+        <rect x="32" y="42" width="306" height="116" rx="3" fill="url(#g1)"/>
+        <rect x="350" y="30" width="80" height="140" rx="4" fill="#0b2447"/>
+        <rect x="360" y="42" width="60" height="116" rx="2" fill="url(#g1)"/>
+        <path d="M430 80h40l32 38v52h-72z" fill="#dfe6ef"/><path d="M440 90h28l22 28h-50z" fill="#9fb5cc"/>
+        <rect x="16" y="170" width="490" height="16" rx="4" fill="#06142b"/>
+        <circle cx="90" cy="192" r="22" fill="#06142b"/><circle cx="90" cy="192" r="9" fill="#9fb5cc"/>
+        <circle cx="430" cy="192" r="22" fill="#06142b"/><circle cx="430" cy="192" r="9" fill="#9fb5cc"/>
+        <defs><linearGradient id="g1" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#f6b400"/><stop offset=".5" stop-color="#ff6a3d"/><stop offset="1" stop-color="#2f7fc4"/></linearGradient></defs>
+      </svg>
+      <div class="flabels">
+        <div><b class="latin">4×2 m</b><span>واجهة جانبية يمنى</span></div>
+        <div><b class="latin">4×2 m</b><span>واجهة جانبية يسرى</span></div>
+        <div><b class="latin">2×2 m</b><span>واجهة خلفية</span></div>
+      </div>
+    </div>
+    <ul class="checks two">
+      <li>شاشات LED Full Color Outdoor عالية الوضوح</li>
+      <li>تشغيل ليلاً ونهاراً بوحدة تشغيل مدمجة</li>
+      <li>حجز باليوم أو بالحملة وجدولة مرنة</li>
+      <li>توزيع جغرافي على الأسواق وأماكن التجمع</li>
+      <li>تصميم وإنتاج إعلانك (صورة أو فيديو) داخلياً</li>
+      <li>توثيق وتقارير متابعة لمواعيد وأماكن العرض</li>
+    </ul>
+  </div>
+  <div class="foot"></div>
+</section>
+
+<!-- ======================= 09 · GALLERY ======================= -->
+<section class="page p-gallery">
+  <div class="grain"></div>
+  <div class="head">
+    <div>
+      <div class="kicker">أعمال حقيقية · شاشات حقيقية</div>
+      <h2 class="h-l">ليلاً ونهاراً…<br><span class="sun">المدينة كلها تشاهد</span></h2>
+    </div>
+    <p class="lead">لا دراسات حالة مختلَقة هنا؛ فقط علامات تجارية ظهرت فعلاً على شاحناتنا وشاشاتنا.</p>
+  </div>
+  <div class="g">
+    <div class="ph"><img src="assets/img/0069.jpg" alt=""><div class="cap">MIXA<small>إطلاق مشروب طاقة، ليلاً ونهاراً</small></div></div>
+    <div class="ph"><img src="assets/img/0368.jpg" alt=""><div class="cap">السنابل<small>مخبوزات وأغذية في حركة عدن</small></div></div>
+    <div class="ph"><img src="assets/img/0080.jpg" alt=""><div class="cap">NAS Group<small>سفر وسياحة تضيء الطريق</small></div></div>
+    <div class="ph"><img src="assets/img/0124.jpg" alt=""><div class="cap">محتوى 3D<small>إعلان ثلاثي الأبعاد على الشاشة</small></div></div>
+    <div class="ph"><img src="assets/img/0363.jpg" alt=""><div class="cap">حملات المنتجات<small>ألوان تخطف الأنظار</small></div></div>
+    <div class="ph"><img src="assets/img/0113.jpg" alt=""><div class="cap">نهاراً<small>وضوح عالٍ تحت الشمس</small></div></div>
+    <div class="ph"><img src="assets/img/0099.jpg" alt=""><div class="cap">TEDx Aden Youth<small>شريك الحدث على الطريق</small></div></div>
+    <div class="ph"><img src="assets/img/0222.jpg" alt=""><div class="cap">إطلاقات جديدة<small>حيث يتجمّع الجمهور</small></div></div>
+    <div class="ph"><img src="assets/img/0103.jpg" alt=""><div class="cap">خدمات تجارية<small>رسالة واضحة من بعيد</small></div></div>
+    <div class="ph"><img src="assets/img/0350.jpg" alt=""><div class="cap">ليلاً<small>الشاشة أسطع ما في الشارع</small></div></div>
+  </div>
+  <div class="foot"></div>
+</section>
+
+<!-- ======================= 10 · FIXED SCREENS ======================= -->
+<section class="page p-fixed">
+  <img class="cover-img" src="assets/img/0175.jpg" alt="" style="object-position:50% 30%">
+  <div class="shade"></div>
+  <div class="led"></div>
+  <div class="text">
+    <div class="big-num" style="font-size:200px">02</div>
+    <div class="latin en">DIGITAL OUTDOOR</div>
+    <h2 class="h-l">الشاشات الثابتة<br><span class="sun">كن مرئياً حيث يهمّ</span></h2>
+    <p class="lead">شاشاتنا العملاقة ترتفع فوق الأماكن التي يتجمّع فيها الناس أصلاً، لتضع علامتك أمام آلاف المشاهدين يومياً، في المكان الذي يقفون فيه بالضبط.</p>
+    <div class="site">
+      <div class="lbl"><svg class="ic"><use href="#i-pin"/></svg> شاشة سوق عدن الدولي</div>
+      <div class="stats">
+        <div><b class="latin">10×6<small>m</small></b><span>مساحة عرض<br>عملاقة</span></div>
+        <div><b class="latin">60<small>m²</small></b><span>شاشة LED<br>عالية الدقة</span></div>
+        <div><b class="latin">24/7</b><span>تشغيل مستمر<br>على مدار الساعة</span></div>
+        <div><b class="ar">آلاف</b><span>الزوار يومياً في<br>أكبر سوق تجاري</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="strip">
+    <div class="ph"><img src="assets/img/0135.jpg" alt=""><div class="cap">الهيكل<small>تجهيز الموقع</small></div></div>
+    <div class="ph"><img src="assets/img/0151.jpg" alt=""><div class="cap">التركيب<small>فريقنا على الارتفاع</small></div></div>
+    <div class="ph"><img src="assets/img/0044.jpg" alt=""><div class="cap">البث<small>أعلى ظهور وأقوى مشاهدة</small></div></div>
+  </div>
+  <div class="foot"></div>
+</section>
+
+<!-- ======================= 11 · EVENTS ======================= -->
+<section class="page light p-events">
+  <div class="ph e1"><img src="assets/img/0372.jpg" alt=""><div class="tag">مهرجانات</div></div>
+  <div class="ph e2"><img src="assets/img/0217.jpg" alt=""><div class="tag">بث جماهيري</div></div>
+  <div class="ph e3"><img src="assets/img/0114.jpg" alt=""><div class="tag">فعاليات مفتوحة</div></div>
+  <div class="text">
+    <div class="kicker">03 · شاشات الفعاليات والتأجير</div>
+    <h2 class="h-l">اجعل اللحظة<br><span class="blue">عملاقة</span></h2>
+    <p class="lead">ليست شرائح على جهاز عرض… بل أكبر شيء في المكان. نورّد ونركّب ونشغّل ونفكّك شاشات LED للمؤتمرات والإطلاقات والمهرجانات والبث الجماهيري.</p>
+    <div class="rent">
+      <div><div class="ibox"><svg class="ic"><use href="#i-stage"/></svg></div><h4>شاشات داخلية عملاقة</h4><p>بأحجام متعددة للقاعات والمؤتمرات والمعارض.</p></div>
+      <div><div class="ibox"><svg class="ic"><use href="#i-board"/></svg></div><h4>شاشات خارجية</h4><p>للمهرجانات والساحات والبث المباشر للمباريات.</p></div>
+      <div><div class="ibox"><svg class="ic"><use href="#i-play"/></svg></div><h4>تشغيل كامل</h4><p>فريق فني يدير المحتوى والبث وربط الفيديو طوال الحدث.</p></div>
+    </div>
+    <div class="trusted">
+      <span>وثق بنا:</span>
+      <b>TEDx Aden Youth</b>
+      <b>Yemen Angel Investment Network</b>
+    </div>
+  </div>
+  <div class="foot"></div>
+</section>
+
+<!-- ======================= 12 · IMPORT & SUPPLY ======================= -->
+<section class="page p-import">
+  <div class="grain"></div>
+  <div class="led"></div>
+  <div class="head">
+    <div>
+      <div class="kicker">04 · استيراد · توريد · تركيب</div>
+      <h2 class="h-l">من المصنع…<br><span class="sun">إلى واجهة مشروعك</span></h2>
+    </div>
+    <div class="agent">
+      <div class="badge latin">EnBon</div>
+      <p><b>وكيل لمصنع شاشات LED في الصين</b><br>نستورد ونورّد ونركّب الشاشات الداخلية والخارجية، بضمان جودة ودعم فني متواصل في جميع أنحاء عدن.</p>
+    </div>
+  </div>
+  <div class="products">
+    <div class="prod">
+      <div class="pimg"><img src="assets/img/p5-cabinet.jpg" alt=""></div>
+      <div class="pbody">
+        <div class="latin pname">OUTDOOR <span class="sun">P5</span></div>
+        <h4>شاشات خارجية مثبّتة · خدمة أمامية وخلفية</h4>
+        <div class="specs">
+          <div><svg class="ic"><use href="#i-layers"/></svg><span>كابينة <b class="latin">960×960 mm</b> · سماكة <b class="latin">120 mm</b></span></div>
+          <div><svg class="ic"><use href="#i-drop"/></svg><span>تصميم مقاوم للماء <b class="latin">IP65</b> ومقاوم للغبار</span></div>
+          <div><svg class="ic"><use href="#i-bolt"/></svg><span>معدل تحديث <b class="latin">≥ 7680 Hz</b> · استهلاك طاقة منخفض</span></div>
+          <div><svg class="ic"><use href="#i-sun"/></svg><span>سطوع عالٍ وتبديد ممتاز للحرارة</span></div>
+          <div><svg class="ic"><use href="#i-wrench"/></svg><span>قابلة للإصلاح والتعديل في المقاس</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="prod">
+      <div class="pimg"><img src="assets/img/p25-poster.jpg" alt=""></div>
+      <div class="pbody">
+        <div class="latin pname">INDOOR <span class="sun">P2.5</span> LED POSTER</div>
+        <h4>شاشات داخلية بإضاءة عالية وتقنية متطورة</h4>
+        <div class="specs">
+          <div><svg class="ic"><use href="#i-shield"/></svg><span><b class="latin">SMD2121</b> مع حماية <b class="latin">GOB</b></span></div>
+          <div><svg class="ic"><use href="#i-bolt"/></svg><span>معدل تحديث <b class="latin">3840 Hz</b></span></div>
+          <div><svg class="ic"><use href="#i-hd"/></svg><span>كابينة <b class="latin">640×1920 mm</b> ألمنيوم قابلة للطي</span></div>
+          <div><svg class="ic"><use href="#i-wifi"/></svg><span>اتصال <b class="latin">Wi-Fi · USB · HDMI</b> ونظام <b class="latin">Novastar</b></span></div>
+          <div><svg class="ic"><use href="#i-wrench"/></svg><span>صيانة من الأمام سهلة وسريعة</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="ideal">
+    <span class="t">مثالية لـ</span>
+    <span class="chip"><b></b>المولات والمجمعات</span><span class="chip"><b></b>الفنادق</span><span class="chip"><b></b>المطارات والمحطات</span><span class="chip"><b></b>المعارض والفعاليات</span><span class="chip"><b></b>المحلات التجارية</span><span class="chip"><b></b>واجهات الشركات</span>
+  </div>
+  <div class="foot"></div>
+</section>
+
+<!-- ======================= 13 · TURNKEY + TEAM ======================= -->
+<section class="page light p-turnkey">
+  <div class="collage">
+    <div class="ph t1"><img src="assets/img/0089.jpg" alt=""></div>
+    <div class="ph t2"><img src="assets/img/0203.jpg" alt=""></div>
+    <div class="ph t3"><img src="assets/img/0072.jpg" alt=""></div>
+    <div class="ph t4"><img src="assets/img/0185.jpg" alt=""></div>
+    <div class="badge"><b class="latin">TURNKEY</b><span>تسليم مفتاح</span></div>
+  </div>
+  <div class="text">
+    <div class="kicker">شركة منفّذة</div>
+    <h2 class="h-l">ننفّذ مشروع شاشتك<br><span class="blue">من المعاينة حتى أول بث</span></h2>
+    <p class="lead">فريقنا الهندسي والميداني يتولى المشروع كاملاً، فلا تتعامل إلا مع جهة واحدة مسؤولة عن كل التفاصيل.</p>
+    <div class="steps">
+      <div><b class="latin">01</b><h4>المعاينة والقياس</h4><p>زيارة الموقع ودراسة زاوية الرؤية والمسافة.</p></div>
+      <div><b class="latin">02</b><h4>اختيار الشاشة</h4><p>تحديد الدقة والمقاس والتقنية حسب الاستخدام.</p></div>
+      <div><b class="latin">03</b><h4>الاستيراد والتوريد</h4><p>مباشرة من المصنع بضمان الجودة.</p></div>
+      <div><b class="latin">04</b><h4>الهيكل والتركيب</h4><p>تنفيذ الهيكل المعدني والتركيب بأمان.</p></div>
+      <div><b class="latin">05</b><h4>التشغيل والمحتوى</h4><p>برمجة نظام التحكم وتجهيز المحتوى الأول.</p></div>
+      <div><b class="latin">06</b><h4>الصيانة والدعم</h4><p>دعم فني متواصل وأداء طويل الأمد.</p></div>
+    </div>
+  </div>
+  <div class="foot"></div>
+</section>
+
+<!-- ======================= 14 · DIGITAL & CREATIVE ======================= -->
+<section class="page p-digital">
+  <div class="grain"></div>
+  <div class="led"></div>
+  <div class="text">
+    <div class="kicker">05 · التسويق الرقمي والإنتاج الإبداعي</div>
+    <h2 class="h-l">من الشارع…<br><span class="sun">إلى الشاشة التي في جيبك</span></h2>
+    <p class="lead">كل شاشة تحتاج شيئاً يستحق المشاهدة. نصمّم ونصوّر ونحرّر، ثم ندير الصفحات والحملات الممولة التي تنقل الحملة من الشارع إلى المنصّات.</p>
+    <div class="caps">
+      <div><div class="ibox"><svg class="ic"><use href="#i-mega"/></svg></div><span>إدارة الصفحات والحملات الممولة</span></div>
+      <div><div class="ibox"><svg class="ic"><use href="#i-target"/></svg></div><span>الاستراتيجية والتخطيط التسويقي</span></div>
+      <div><div class="ibox"><svg class="ic"><use href="#i-pen"/></svg></div><span>الهوية البصرية وتصميم الشعارات</span></div>
+      <div><div class="ibox"><svg class="ic"><use href="#i-layers"/></svg></div><span>التصميم الجرافيكي والمطبوعات</span></div>
+      <div><div class="ibox"><svg class="ic"><use href="#i-film"/></svg></div><span>التصوير والمونتاج والإخراج الفني</span></div>
+      <div><div class="ibox"><svg class="ic"><use href="#i-play"/></svg></div><span>الموشن جرافيك والأنيميشن</span></div>
+      <div><div class="ibox"><svg class="ic"><use href="#i-cube"/></svg></div><span>فيديوهات 3D ثلاثية الأبعاد</span></div>
+      <div><div class="ibox"><svg class="ic"><use href="#i-spark"/></svg></div><span>إعلانات CGI و FOOH الإبداعية</span></div>
+    </div>
+  </div>
+  <div class="phones">
+    <div class="phone ph1"><img src="assets/img/0085.jpg" alt=""></div>
+    <div class="phone ph2"><img src="assets/img/0081.jpg" alt=""></div>
+    <div class="phone ph3"><img src="assets/img/0207.jpg" alt=""></div>
+    <div class="float f1"><svg class="ic"><use href="#i-eye"/></svg><span class="latin">REACH</span></div>
+    <div class="float f2"><svg class="ic"><use href="#i-play"/></svg><span class="latin">REELS</span></div>
+    <div class="float f3"><svg class="ic"><use href="#i-chart"/></svg><span class="latin">GROWTH</span></div>
+  </div>
+  <div class="marquee latin">FEED · STORIES · REACH · REELS · SHARES · COMMENTS · VIEWS · SAVES · FEED · STORIES · REACH · REELS · SHARES · COMMENTS · VIEWS · SAVES</div>
+  <div class="foot"></div>
+</section>
+
+<!-- ======================= 15 · HOW WE WORK ======================= -->
+<section class="page p-process">
+  <img class="cover-img" src="assets/img/0197.jpg" alt="" style="object-position:50% 55%">
+  <div class="shade"></div>
+  <div class="led"></div>
+  <div class="head">
+    <div class="kicker">كيف نعمل</div>
+    <h2 class="h-l">فريق واحد · مسار واحد<br><span class="sun">من الفكرة إلى الأثر</span></h2>
+  </div>
+  <div class="route">
+    <svg class="path" viewBox="0 0 1700 200" preserveAspectRatio="none"><path d="M0 100 C140 20 280 180 425 100 S710 20 850 100 S1130 180 1275 100 S1560 20 1700 100" stroke="#f6b400" stroke-width="3" fill="none" stroke-dasharray="10 12"/></svg>
+    <div class="stop"><div class="dot"><svg class="ic"><use href="#i-bulb"/></svg></div><b class="latin">01</b><h4>نفهم</h4><p>نستمع لهدفك وجمهورك وميزانيتك.</p></div>
+    <div class="stop"><div class="dot"><svg class="ic"><use href="#i-compass"/></svg></div><b class="latin">02</b><h4>نخطّط</h4><p>نختار القنوات والمسارات والمواقع والتوقيت.</p></div>
+    <div class="stop"><div class="dot"><svg class="ic"><use href="#i-pen"/></svg></div><b class="latin">03</b><h4>نصنع</h4><p>تصميم وفيديو و3D جاهز لكل شاشة ومنصّة.</p></div>
+    <div class="stop"><div class="dot"><svg class="ic"><use href="#i-truck"/></svg></div><b class="latin">04</b><h4>نُطلق</h4><p>على الشاحنات والشاشات وفي الفعاليات.</p></div>
+    <div class="stop"><div class="dot"><svg class="ic"><use href="#i-phone"/></svg></div><b class="latin">05</b><h4>نضاعف</h4><p>نمدّ الحملة رقمياً إلى الهواتف.</p></div>
+    <div class="stop"><div class="dot"><svg class="ic"><use href="#i-chart"/></svg></div><b class="latin">06</b><h4>نقيس</h4><p>توثيق وتقارير لتعرف أين وصلت رسالتك.</p></div>
+  </div>
+  <div class="foot"></div>
+</section>
+
+<!-- ======================= 16 · WHY US ======================= -->
+<section class="page light p-why">
+  <div class="imgside">
+    <img src="assets/img/0180.jpg" alt="">
+    <div class="led strong"></div>
+    <div class="q">لا نقدّم إعلاناً عابراً…<br><span class="sun">بل نُطلق موجة تأثير.</span></div>
+  </div>
+  <div class="text">
+    <div class="kicker">لماذا بحار الشرق؟</div>
+    <h2 class="h-l">ميزاتنا<br><span class="blue">التنافسية</span></h2>
+    <div class="why">
+      <div><b class="latin">01</b><h4>الرواد في عدن</h4><p>أول شركة في عدن تقدّم خدمة الشاشات الإعلانية المتنقلة.</p></div>
+      <div><b class="latin">02</b><h4>إنتاج داخلي متكامل</h4><p>فريق إنتاج خاص من الفكرة حتى البث، دون وسطاء.</p></div>
+      <div><b class="latin">03</b><h4>منظومة كاملة</h4><p>شارع، شاشة، مسرح، ومنصّات رقمية تحت سقف واحد.</p></div>
+      <div><b class="latin">04</b><h4>وكلاء مصنع</h4><p>توريد مباشر للشاشات وتنفيذ مشاريعها بضمان ودعم.</p></div>
+      <div><b class="latin">05</b><h4>مرونة في الميزانية</h4><p>عروض وحلول مخصّصة تناسب حجم كل عميل.</p></div>
+      <div><b class="latin">06</b><h4>نفهم جمهورنا</h4><p>نعرف الثقافة المحلية ونجيد مخاطبة الجمهور اليمني بأسلوب فعّال.</p></div>
+    </div>
+  </div>
+  <div class="foot"></div>
+</section>
+
+<!-- ======================= 17 · PARTNERS ======================= -->
+<section class="page p-partners">
+  <div class="grain"></div>
+  <div class="head">
+    <div>
+      <div class="kicker">شركاء النجاح</div>
+      <h2 class="h-l">ثقة متبادلة…<br><span class="sun">شراكة مستدامة</span></h2>
+    </div>
+    <p class="lead">علامات تجارية ومؤسسات اختارت أن تُبحر معنا.</p>
+  </div>
+  <div class="signs">
+    <div class="ph"><img src="assets/img/sign-0047.jpg" alt=""><div class="cap">توقيع شراكة<small>بنك عدن الإسلامي للتمويل الأصغر</small></div></div>
+    <div class="ph"><img src="assets/img/sign-0087.jpg" alt=""><div class="cap">توقيع شراكة</div></div>
+    <div class="ph"><img src="assets/img/sign-0239.jpg" alt=""><div class="cap">توقيع شراكة</div></div>
+  </div>
+  <div class="flags">
+    <div class="ph"><img src="assets/img/flag-0075.jpg" alt=""></div>
+    <div class="ph"><img src="assets/img/flag-0076.jpg" alt=""></div>
+    <div class="ph"><img src="assets/img/flag-0142.jpg" alt=""></div>
+    <div class="ph"><img src="assets/img/flag-0227.jpg" alt=""></div>
+  </div>
+  <div class="names">
+    <span>بنك عدن الإسلامي للتمويل الأصغر</span><span>الجامعة الألمانية الدولية – عدن</span><span class="latin">TEDx Aden Youth</span><span>Yemen Angel Investment Network</span><span class="latin">MIXA</span><span>المقبلي للطاقة</span><span>السنابل</span><span class="latin">EPC</span><span class="latin">NAS Group</span><span class="latin">Crystal</span><span>شركة الجيلاني التجارية</span>
+  </div>
+  <div class="foot"></div>
+</section>
+
+<!-- ======================= 18 · CONTACT / BACK COVER ======================= -->
+<section class="page p-back">
+  <div class="grain"></div>
+  <div class="led"></div>
+  <div class="frame"><i></i><i></i><i></i><i></i></div>
+  <div class="left">
+    <img class="logo" src="assets/logo/logo-v-white.svg" alt="بحار الشرق للتسويق والإعلان">
+    <div class="qr"><img src="assets/qr.svg" alt=""><span>امسح لزيارة موقعنا</span></div>
+  </div>
+  <div class="right">
+    <div class="kicker">تواصل معنا</div>
+    <h2 class="h-xl">جاهز<br>لتكون <span class="sun">مرئيّاً؟</span></h2>
+    <p class="lead">أخبرنا بما تحتاجه: شاحنة، شاشة، فعالية، أو كل ذلك معاً.<br>تواصل معنا اليوم… <b>ودع أفكارك تُبحر بعيداً.</b></p>
+    <div class="contacts">
+      <div><div class="ibox"><svg class="ic"><use href="#i-call"/></svg></div><span class="latin num">784007800 · 784006800</span><small>هاتف وواتساب · +967</small></div>
+      <div><div class="ibox"><svg class="ic"><use href="#i-globe"/></svg></div><span class="latin">www.bahrshrq.com</span><small>الموقع الإلكتروني</small></div>
+      <div><div class="ibox"><svg class="ic"><use href="#i-mail"/></svg></div><span class="latin">info@baharalsharq.com</span><small>البريد الإلكتروني</small></div>
+      <div><div class="ibox"><svg class="ic"><use href="#i-at"/></svg></div><span class="latin">@bahrshrq</span><small>فيسبوك · إنستغرام · X · يوتيوب · تيك توك</small></div>
+      <div class="wide"><div class="ibox"><svg class="ic"><use href="#i-pin"/></svg></div><span>عدن – المنصورة، ريمي، خلف الحجاز</span><small>الجمهورية اليمنية</small></div>
+    </div>
+  </div>
+  <div class="tags">#بحار_الشرق #عدن #تسويق #إعلان #هوية_بصرية #موشن_جرافيكس #إبداع <span class="latin">#Branding #Marketing #ADEN</span></div>
+  <svg class="wave" style="bottom:-2px;height:90px" viewBox="0 0 1920 90" preserveAspectRatio="none"><path d="M0 50 C320 0 640 90 960 45 S1600 0 1920 45 V90 H0z" fill="#1f5f94" opacity=".5"/><path d="M0 70 C360 30 700 95 1020 60 S1650 35 1920 68 V90 H0z" fill="#f6b400" opacity=".9"/></svg>
+</section>
+
+<script>
+  // running footers with page numbers
+  const pages=[...document.querySelectorAll('.page')];
+  const total=String(pages.length).padStart(2,'0');
+  pages.forEach((p,i)=>{
+    const f=p.querySelector('.foot'); if(!f) return;
+    const light=p.classList.contains('light');
+    f.innerHTML=`<div class="brand"><img src="assets/logo/logo-icon${light?'':'-white'}.svg" alt=""><span>بحار الشرق للتسويق والإعلان · ملف الشركة 2026</span></div><div class="num">${String(i+1).padStart(2,'0')} <span>/ ${total}</span></div>`;
+  });
+</script>
+</body>
+</html>

@@ -11,14 +11,15 @@ const FONTS = {
 const TEXTS = {
   brand: ['cairo', 'بحار الشرق'],
   sub: ['cairoBold', 'للتسويق والإعلان'],
+  aden: ['cairo', 'من قلب عدن'],
+  adenSub: ['cairoBold', 'إلى كل الشوارع'],
   design: ['cairo', 'نصمم إعلانك'],
-  illusion: ['cairo', 'بالخداع البصري'],
+  illusion: ['cairo', 'بتقنية الخداع البصري'],
   threeD: ['cairo', '3D'],
-  screens: ['cairoBold', 'شاشاتنا المتنقلة تدعم العرض ثلاثي الأبعاد'],
+  screens: ['cairoBold', 'وشاشاتنا تعرضه وكأنه يخرج إليك'],
   slogan: ['cairo', 'إعلانك ... يصل للجميع'],
   phones: ['cairoBold', '784006800  |  784007800'],
   handle: ['cairoBold', '@baharalsharq'],
-  wow: ['cairo', 'خلّي إعلانك يطلع من الشاشة'],
 };
 
 require('harfbuzzjs').then((hb) => {

@@ -11,7 +11,7 @@ const OUT = path.resolve(args.out || 'frames');
 const SHARD = +(args.shard || 0), SHARDS = +(args.shards || 1);
 fs.mkdirSync(OUT, { recursive: true });
 
-const MIME = { '.html': 'text/html', '.js': 'text/javascript', '.json': 'application/json', '.wasm': 'application/wasm' };
+const MIME = { '.html': 'text/html', '.js': 'text/javascript', '.json': 'application/json', '.wasm': 'application/wasm', '.ttf': 'font/ttf' };
 const server = http.createServer((req, res) => {
   const p = path.join(__dirname, decodeURIComponent(req.url.split('?')[0]));
   fs.readFile(p, (err, data) => {
@@ -34,7 +34,7 @@ const server = http.createServer((req, res) => {
   let frames;
   if (args.times) frames = args.times.split(',').map((t, i) => ({ t: +t, name: `t_${(+t).toFixed(2)}` }));
   else {
-    const from = +(args.from || 0), to = +(args.to || 24);
+    const from = +(args.from || 0), to = +(args.to || (await page.evaluate(() => window.DURATION)));
     const n0 = Math.round(from * FPS), n1 = Math.round(to * FPS);
     frames = [];
     for (let n = n0; n < n1; n++) if (n % SHARDS === SHARD) frames.push({ t: n / FPS, name: String(n).padStart(5, '0') });

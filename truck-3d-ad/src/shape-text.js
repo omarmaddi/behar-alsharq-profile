@@ -11,12 +11,10 @@ const FONTS = {
 const TEXTS = {
   brand: ['cairo', 'بحار الشرق'],
   sub: ['cairoBold', 'للتسويق والإعلان'],
-  aden: ['cairo', 'من قلب عدن'],
-  adenSub: ['cairoBold', 'إلى كل الشوارع'],
   design: ['cairo', 'نصمم إعلانك'],
   illusion: ['cairo', 'بتقنية الخداع البصري'],
   threeD: ['cairo', '3D'],
-  screens: ['cairoBold', 'وشاشاتنا تعرضه وكأنه يخرج إليك'],
+  screens: ['cairoBold', 'وشاشاتنا تُخرجه إليك'],
   slogan: ['cairo', 'إعلانك ... يصل للجميع'],
   phones: ['cairoBold', '784006800  |  784007800'],
   handle: ['cairoBold', '@baharalsharq'],
